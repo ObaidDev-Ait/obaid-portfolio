@@ -40,9 +40,10 @@ export function useTheme() {
   }, []);
 
   const toggleTheme = () => {
+    // Disable transitions temporarily to prevent lag on mobile rendering
+    document.documentElement.classList.add("disable-transitions");
+
     const newTheme: Theme = theme === "light" ? "dark" : "light";
-    console.log("[useTheme] Toggling theme to:", newTheme);
-    
     setTheme(newTheme);
     
     try {
@@ -53,14 +54,22 @@ export function useTheme() {
     
     if (newTheme === "dark") {
       document.documentElement.classList.add("dark");
-      console.log("[useTheme] Added '.dark' to documentElement classList:", document.documentElement.className);
     } else {
       document.documentElement.classList.remove("dark");
-      console.log("[useTheme] Removed '.dark' from documentElement classList:", document.documentElement.className);
     }
+
+    // Force style reflow to apply new styles instantly
+    window.getComputedStyle(document.documentElement).opacity;
 
     // Dispatch global event so all toggle buttons update their state
     window.dispatchEvent(new CustomEvent("theme-change", { detail: newTheme }));
+
+    // Re-enable transitions in the next animation frames
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.documentElement.classList.remove("disable-transitions");
+      });
+    });
   };
 
   return { theme, toggleTheme };

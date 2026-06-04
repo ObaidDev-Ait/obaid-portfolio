@@ -6,15 +6,17 @@ import { useRef } from "react";
 const coreSkills = [
   { name: "React", key: "react" },
   { name: "Next.js", key: "next" },
-  { name: "TypeScript", key: "typescript" },
-  { name: "Tailwind CSS", key: "tailwind" },
   { name: "Node.js", key: "node" },
+  { name: "Nest.js", key: "nest" },
+  { name: "TypeScript", key: "typescript" },
+  { name: "JavaScript", key: "javascript" },
+  { name: "PostgreSQL", key: "postgres" },
   { name: "MySQL", key: "mysql" },
+  { name: "SQL", key: "sql" },
+  { name: "Git & GitHub", key: "git" },
+  { name: "REST APIs", key: "restapi" },
+  { name: "Tailwind CSS", key: "tailwind" },
   { name: "Supabase", key: "supabase" },
-  { name: "Git / GitHub", key: "git" },
-  { name: "Vercel", key: "vercel" },
-  { name: "Framer Motion", key: "framer" },
-  { name: "Leaflet", key: "leaflet" },
   { name: "JWT Auth", key: "jwt" },
 ];
 
@@ -51,6 +53,13 @@ function getTechIconLarge(key: string) {
           <path d="M136.21 169.53c4.13 6.94 10.96 11.23 18.99 11.23 7.8 0 12.82-3.8 12.82-12.63 0-21.72-32.96-22.95-32.96-51.2 0-14.7 10.96-24.87 27.26-24.87 14.87 0 24.12 7.02 28.5 16.52l-14.04 8.26c-3.14-5.37-7.85-8.43-14.46-8.43-6.6 0-9.83 3.63-9.83 8.92 0 19.33 32.96 20.32 32.96 50.38 0 17.6-13.46 27.18-30.8 27.18-19.49 0-31.14-9.33-35.35-21.22l14.96-8.12zm-35.35-61.94v87.11H85.49V107.59H54V93h62v14.59H100.86z" fill="white"/>
         </svg>
       );
+    case "javascript":
+      return (
+        <svg className="w-12 h-12 sm:w-14 h-14 text-[#f7df1e] transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 3h18v18H3V3z" fill="#f7df1e"/>
+          <path d="M12 17.5c0 1.5-1 2.5-2.5 2.5S7 19 7 17.5h2c0 .5.3.8.7.8.4 0 .6-.2.6-.6v-5.2h1.7v5.2zm7.1-.9c-.3 1-1.2 1.9-2.5 1.9-1.5 0-2.3-1-2.3-2.5h1.8c0 .6.3 1 .7 1 .4 0 .6-.3.6-.7v-.5c0-1.2-2.3-.8-2.3-3.1 0-1.2 1-2.2 2.2-2.2 1.3 0 2.2.8 2.4 1.9h-1.8c0-.5-.3-.7-.6-.7-.4 0-.6.2-.6.6v.4c0 1.2 2.3.8 2.3 3.1v.3z" fill="#000000"/>
+        </svg>
+      );
     case "tailwind":
       return (
         <svg className="w-12 h-12 sm:w-14 h-14 text-[#38bdf8] transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
@@ -63,12 +72,37 @@ function getTechIconLarge(key: string) {
           <path d="M12 24a2.22 2.22 0 0 1-1.12-.31L2 18.25a2.24 2.24 0 0 1-1.12-1.93V6.68a2.24 2.24 0 0 1 1.12-1.93L10.88.31a2.23 2.23 0 0 1 2.24 0l8.88 5.44A2.24 2.24 0 0 1 23.12 7.7v9.64a2.24 2.24 0 0 1-1.12 1.93l-8.88 5.44A2.22 2.22 0 0 1 12 24zM12 2.05L3.12 7.49v10.88L12 23.81l8.88-5.44V7.49z"/>
         </svg>
       );
+    case "nest":
+      return (
+        <svg className="w-12 h-12 sm:w-14 h-14 text-[#e0234e] transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L2 6.5v5c0 5.25 4.25 9.75 10 10.5 5.75-.75 10-5.25 10-10.5v-5L12 2zm0 3.3l5.3 5.3H14.7l-2.7-2.7-2.7 2.7H6.7L12 5.3zm-5.3 7h10.6l-5.3 5.3-5.3-5.3z" />
+        </svg>
+      );
+    case "postgres":
+      return (
+        <svg className="w-12 h-12 sm:w-14 h-14 text-[#336791] transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <ellipse cx="12" cy="5" rx="9" ry="3"/>
+          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+          <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+          <path d="M12 12v6" strokeWidth="1.5" />
+          <circle cx="12" cy="15" r="2" fill="currentColor" stroke="none" />
+        </svg>
+      );
     case "mysql":
       return (
         <svg className="w-12 h-12 sm:w-14 h-14 text-[#00758f] transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <ellipse cx="12" cy="5" rx="9" ry="3"/>
           <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
           <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+        </svg>
+      );
+    case "sql":
+      return (
+        <svg className="w-12 h-12 sm:w-14 h-14 text-[#00bcff] transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <ellipse cx="12" cy="5" rx="9" ry="3"/>
+          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+          <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+          <path d="M8 14h8M8 17h5" strokeWidth="1.5" />
         </svg>
       );
     case "supabase":
@@ -83,22 +117,15 @@ function getTechIconLarge(key: string) {
           <path d="M23.27 11.59L12.41 1.05a1.76 1.76 0 0 0-2.48 0L8.85 2.13l3.05 3.05a2.22 2.22 0 0 1 .65.04c.48.09.89.39 1.14.81.25.43.32.93.2 1.41l3.05 3.05c.48-.12.98-.05 1.41.2.85.49 1.14 1.58.65 2.43a1.77 1.77 0 0 1-2.43.65c-.81-.47-1.11-1.49-.69-2.31l-3-3a1.77 1.77 0 0 1-1.38.16 1.76 1.76 0 0 1-1.14-.97L7.33 7.82c-.85.49-1.94.2-2.43-.65a1.76 1.76 0 0 1 .65-2.43c.81-.47 1.83-.17 2.31.65l3.05-3.05-1.08-1.08a1.76 1.76 0 0 0-2.48 0L1.05 12.41a1.76 1.76 0 0 0 0 2.48l10.86 10.86c.68.68 1.8.68 2.48 0l10.86-10.86a1.76 1.76 0 0 0 0-2.48z" />
         </svg>
       );
-    case "vercel":
+    case "restapi":
       return (
-        <svg className="w-12 h-12 sm:w-14 h-14 text-slate-900 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M24 22.525H0L12 1.475l12 21.05z" />
-        </svg>
-      );
-    case "framer":
-      return (
-        <svg className="w-12 h-12 sm:w-14 h-14 text-[#f02e65] transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M0 0h12L24 12H12L0 24V12h12L0 0z" />
-        </svg>
-      );
-    case "leaflet":
-      return (
-        <svg className="w-12 h-12 sm:w-14 h-14 text-[#199900] transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+        <svg className="w-12 h-12 sm:w-14 h-14 text-[#00bcd4] transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+          <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+          <line x1="6" y1="6" x2="6.01" y2="6" />
+          <line x1="6" y1="18" x2="6.01" y2="18" />
+          <line x1="20" y1="6" x2="14" y2="6" />
+          <line x1="20" y1="18" x2="14" y2="18" />
         </svg>
       );
     case "jwt":

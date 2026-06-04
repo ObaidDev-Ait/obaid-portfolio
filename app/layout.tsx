@@ -23,26 +23,29 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Obaid — Full Stack & AI Engineer",
+    default: "Obaid — Full-Stack Software Developer",
     template: "%s | Obaid",
   },
   description:
-    "Portfolio of Obaid — Full Stack & AI Engineer specializing in real-time systems, climate intelligence platforms, enterprise-grade PWAs, and data-driven automation.",
+    "Software Developer passionate about building secure, scalable, and high-performance applications. Experienced in full-stack development, API design, database management, and modern web technologies.",
   keywords: [
     "Full Stack Developer",
-    "AI Engineer",
+    "Software Developer",
     "React",
     "Next.js",
     "Node.js",
     "TypeScript",
+    "Nest.js",
+    "PostgreSQL",
+    "REST APIs",
     "Portfolio",
     "Software Engineer",
   ],
   authors: [{ name: "Obaid" }],
   openGraph: {
-    title: "Obaid — Full Stack & AI Engineer",
+    title: "Obaid — Full-Stack Software Developer",
     description:
-      "Building intelligent, production-grade systems that scale. Explore my engineering case studies.",
+      "Software Developer passionate about building secure, scalable, and high-performance applications. Explore my engineering case studies.",
     type: "website",
     locale: "en_US",
   },

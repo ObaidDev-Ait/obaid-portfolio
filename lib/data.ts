@@ -51,10 +51,10 @@ export interface PersonalInfo {
 // ── Personal Info ────────────────────────────────────────────
 export const personalInfo: PersonalInfo = {
   name: "Obaid Ait Mattou",
-  title: "Full Stack & AI Engineer",
-  tagline: "Building intelligent, production-grade systems that scale.",
+  title: "Full-Stack Software Developer",
+  tagline: "Software Developer passionate about building secure, scalable, and high-performance applications.",
   summary:
-    "I architect and ship end-to-end software — from real-time transit platforms and climate intelligence systems to enterprise-grade PWAs. I specialize in secure API design, offline-first architectures, and data-driven automation.",
+    "I design and build modern web applications, scalable backend systems, and intuitive user experiences. I specialize in React, Next.js, Node.js, REST APIs Nest.js, databases, and software engineering best practices.",
   email: "obaidait2025@gmail.com",
   github: "https://github.com/ObaidDev-Ait",
   linkedin: "https://linkedin.com/in/obaid-ait-mattou-2b058130b",
@@ -64,14 +64,106 @@ export const personalInfo: PersonalInfo = {
 // ── Projects ─────────────────────────────────────────────────
 export const projects: Project[] = [
   {
+    slug: "contentflow",
+    icon: "✍️",
+    color: "#3b82f6",
+    gradient: "from-blue-500 to-indigo-600",
+    image: "/projects/contentflow.png",
+    title: "AI Publisher Platform",
+    subtitle: "Full-Stack SaaS Application",
+    card: "An AI-powered publishing platform that helps users create, manage, optimize, and publish digital content through a modern and intuitive dashboard.",
+    githubUrl: "#",
+    liveUrl: "#",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "NestJS",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "REST API",
+      "JWT Authentication",
+      "Docker",
+      "Git & GitHub",
+    ],
+    summary:
+      "AI Publisher Platform is a full-stack SaaS application designed to simplify digital content management and publishing workflows. The platform provides secure authentication, role-based access control, content management tools, and AI-assisted publishing features. Built with scalability, performance, and user experience in mind.",
+    highlights: [
+      {
+        area: "SaaS Architecture",
+        detail:
+          "Designed and developed a scalable multi-tier SaaS architecture with Next.js, NestJS, and PostgreSQL.",
+      },
+      {
+        area: "Security & Auth",
+        detail:
+          "Implemented secure JWT authentication, session handling, and hierarchical Role-Based Access Control (RBAC).",
+      },
+      {
+        area: "Dashboard UI",
+        detail:
+          "Built a modern, highly responsive analytics dashboard with Tailwind CSS and interactive UI elements.",
+      },
+      {
+        area: "Optimization",
+        detail:
+          "Optimized application bundle size, database query performance, and overall maintainability using NestJS patterns.",
+      },
+      {
+        area: "Clean Engineering",
+        detail:
+          "Applied clean architecture principles, strict TypeScript typing, and CI/CD ready workflows.",
+      },
+    ],
+    architecture: `CLIENT LAYER (Next.js)
+  React Components · Tailwind CSS · Dashboard UI
+  Auth Providers · State Manager · API Client
+─────────────────────────────────────────────
+API GATEWAY & SECURITY (NestJS)
+  JWT Authenticator · RBAC Guard · Route Interceptor
+  Validation Pipe · Rate Limiter
+─────────────────────────────────────────────
+BUSINESS LOGIC LAYER (NestJS Services)
+  Content Publisher · AI Assistant Module
+  User Manager · Billing & Subscription Engine
+─────────────────────────────────────────────
+PERSISTENCE LAYER (PostgreSQL)
+  Relational Schema · Indexed Queries
+  Connection Pooler · Transaction Coordinator`,
+    challenges: [
+      {
+        title: "Role-Based Access Control Matrix",
+        detail:
+          "Designing and implementing a dynamic, server-enforced RBAC system that correctly restricts actions for authors, editors, and administrators at both API and UI levels.",
+      },
+      {
+        title: "AI-Assisted Content Generation Flow",
+        detail:
+          "Building a reliable, event-driven publishing queue that integrates external AI engines, handles rate-limiting and timeouts, and updates the client interface in real time.",
+      },
+      {
+        title: "PostgreSQL Database Performance Tuning",
+        detail:
+          "Optimizing database queries and indexes for high-volume content retrieval, preventing connection leaks under high concurrent dashboard traffic.",
+      },
+    ],
+    impact: [
+      "Streamlines digital publishing workflows, reducing content-to-live time by up to 50%",
+      "Provides seamless and secure access control, eliminating unauthorized data access",
+      "Delivers a highly intuitive dashboard layout that improves user retention and session time",
+      "Dockerized container setup simplifies local development and multi-environment deployment",
+    ],
+  },
+  {
     slug: "atlasforecast",
     icon: "🌍",
     color: "#22d3ee",
     gradient: "from-cyan-400 to-blue-500",
     image: "/projects/atlasforecast.png",
-    title: "AtlasForecast AI",
-    subtitle: "Satellite-Enhanced Climate Intelligence & Risk Analytics Platform",
-    card: "Satellite-enhanced climate intelligence platform with automated risk detection, NASA GIBS temporal imagery, multi-API weather fusion, and intelligent TTL caching.",
+    title: "AtlasForecast",
+    subtitle: "Satellite-Enhanced Weather & Geospatial Analytics Platform",
+    card: "Satellite-enhanced weather analytics and geospatial platform with automated risk detection, NASA GIBS temporal imagery, multi-API weather fusion, and intelligent TTL caching.",
     githubUrl: "#",
     liveUrl: "#",
     techStack: [
@@ -85,18 +177,18 @@ export const projects: Project[] = [
       "OAuth",
       "REST API",
       "Geospatial",
-      "Climate Analytics",
+      "Weather Analytics",
       "Risk Engine",
       "TTL Caching",
       "Satellite Imagery",
     ],
     summary:
-      "Designed and built an AI-augmented climate intelligence platform that fuses data from multiple meteorological APIs and NASA satellite imagery to deliver real-time weather forecasting, automated severe-weather risk analysis, and interactive geospatial visualization. Features an automated climate risk engine that detects heatwaves, storms, and flood conditions using multi-variable threshold analysis.",
+      "Designed and built a database-driven weather analytics and geospatial platform that fuses data from multiple meteorological APIs and NASA satellite imagery to deliver real-time weather forecasting, automated severe-weather risk analysis, and interactive geospatial visualization. Features an automated weather risk engine that detects heatwaves, storms, and flood conditions using multi-variable threshold analysis.",
     highlights: [
       {
         area: "Risk Analysis Engine",
         detail:
-          "Automated multi-variable climate risk scoring: temperature anomaly, wind speed, precipitation intensity, and humidity cross-correlation for heatwave, storm, and flood detection.",
+          "Automated multi-variable weather risk scoring: temperature anomaly, wind speed, precipitation intensity, and humidity cross-correlation for heatwave, storm, and flood detection.",
       },
       {
         area: "Satellite Integration",
@@ -132,7 +224,7 @@ DATA ORCHESTRATION LAYER
   Multi-API Fetcher · Response Normalizer · Failover
   Cache Manager (TTL) · Rate Limit Guard
 ─────────────────────────────────────────────
-INTELLIGENCE / ANALYTICS LAYER
+ANALYTICS & PROCESSING LAYER
   Risk Scoring Engine · Threshold Analyzer
   Heatwave Detector · Storm Classifier · Flood Estimator
 ─────────────────────────────────────────────
@@ -164,7 +256,7 @@ AUTH & PERSISTENCE (Supabase)
       },
     ],
     impact: [
-      "Democratized climate intelligence — satellite-grade analysis accessible to non-specialist users",
+      "Democratized weather and geospatial analytics — satellite-grade analysis accessible to non-specialist users",
       "Proactive risk alerting enables early evacuation planning and infrastructure protection",
       "70% API cost reduction through intelligent TTL caching",
       "NASA-grade satellite access via temporal GIBS integration",
@@ -178,8 +270,8 @@ AUTH & PERSISTENCE (Supabase)
     gradient: "from-amber-400 to-red-500",
     image: "/projects/kechbus-ticket.png",
     title: "KechBus Ticket",
-    subtitle: "Real-Time Intelligent Urban Transit & Digital Ticketing Platform",
-    card: "Real-time urban transit platform with smart seat reservation, digital QR ticketing, live fleet tracking, and role-based access. Engineered for concurrency safety and smart city scalability.",
+    subtitle: "Real-Time Urban Transit & Digital Ticketing Platform",
+    card: "Real-time urban transit platform with concurrent-safe seat reservation, digital QR ticketing, live fleet tracking, and role-based access. Engineered for concurrency safety and smart city scalability.",
     githubUrl: "#",
     liveUrl: "#",
     techStack: [
@@ -389,13 +481,13 @@ export const skills: SkillCategory[] = [
     category: "Frontend",
     icon: "⚡",
     items: [
-      "React.js",
+      "React",
       "Next.js",
+      "JavaScript",
       "TypeScript",
       "Tailwind CSS",
       "Framer Motion",
       "PWA",
-      "Leaflet",
     ],
   },
   {
@@ -403,60 +495,36 @@ export const skills: SkillCategory[] = [
     icon: "🔧",
     items: [
       "Node.js",
+      "Nest.js",
       "Express",
       "REST APIs",
       "JWT Auth",
       "RBAC",
       "WebSocket",
-      "PDF Generation",
     ],
   },
   {
-    category: "Data & Cloud",
+    category: "Databases & Storage",
     icon: "🗄️",
     items: [
+      "PostgreSQL",
       "MySQL",
+      "SQL",
       "Supabase",
       "IndexedDB",
-      "SQL Optimization",
-      "Data Modeling",
       "Caching (TTL)",
-    ],
-  },
-  {
-    category: "AI & Analytics",
-    icon: "🤖",
-    items: [
-      "Risk Scoring Engines",
-      "Climate Analytics",
-      "Data Fusion",
-      "Threshold Analysis",
-      "Geospatial Data",
-      "Satellite Imagery",
     ],
   },
   {
     category: "DevOps & Tools",
     icon: "🚀",
     items: [
-      "Git / GitHub",
+      "Git & GitHub",
       "Vercel",
       "Service Workers",
       "CI/CD",
       "Lighthouse",
       "Performance Tuning",
-    ],
-  },
-  {
-    category: "API Integration",
-    icon: "🔌",
-    items: [
-      "OpenWeatherMap",
-      "Open-Meteo",
-      "NASA GIBS",
-      "OAuth Providers",
-      "Supabase Auth",
-      "Real-Time APIs",
     ],
   },
 ];
@@ -471,9 +539,9 @@ export const stats = [
 
 // ── Typing Phrases ───────────────────────────────────────────
 export const typingPhrases = [
-  "Full Stack Engineer",
-  "AI Systems Builder",
-  "API Architect",
+  "Full-Stack Software Developer",
+  "React & Next.js Developer",
+  "Backend & API Engineer",
   "PWA Specialist",
-  "Climate Tech Dev",
+  "Database Systems Developer",
 ];

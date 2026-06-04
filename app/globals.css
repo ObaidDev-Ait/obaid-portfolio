@@ -291,3 +291,11 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── Disable Transitions (Snappy Theme Switcher) ──────────────── */
+.disable-transitions,
+.disable-transitions * {
+  transition: none !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+}

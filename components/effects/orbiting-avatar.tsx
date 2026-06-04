@@ -174,58 +174,60 @@ const OrbitRing = ({ radius, speed, reverse = false, icons }: OrbitRingProps) =>
 
 export function OrbitingAvatar() {
   return (
-    <div className="relative w-[360px] h-[360px] sm:w-[480px] sm:h-[480px] md:w-[580px] md:h-[580px] flex items-center justify-center scale-[0.65] xs:scale-[0.75] sm:scale-[0.85] md:scale-95 lg:scale-100 origin-center select-none">
-      {/* Background radial soft glows to simulate depth */}
-      <div className="absolute w-[200px] h-[200px] bg-accent-blue/15 rounded-full blur-[60px] pointer-events-none" />
-      <div className="absolute w-[300px] h-[300px] bg-accent-purple/10 rounded-full blur-[80px] pointer-events-none translate-x-10 translate-y-10" />
+    <div className="relative flex items-center justify-center w-[260px] h-[260px] xs:w-[320px] xs:h-[320px] sm:w-[410px] sm:h-[410px] md:w-[550px] md:h-[550px] lg:w-[580px] lg:h-[580px] overflow-visible">
+      <div className="absolute flex items-center justify-center select-none origin-center shrink-0 w-[580px] h-[580px] scale-[0.45] xs:scale-[0.55] sm:scale-[0.7] md:scale-[0.95] lg:scale-100">
+        {/* Background radial soft glows to simulate depth */}
+        <div className="absolute w-[200px] h-[200px] bg-accent-blue/15 rounded-full blur-[60px] pointer-events-none" />
+        <div className="absolute w-[300px] h-[300px] bg-accent-purple/10 rounded-full blur-[80px] pointer-events-none translate-x-10 translate-y-10" />
 
-      {/* Orbit Rings & Orbiting Stack Planets */}
-      {/* Outer Orbit: Radius 260px, rotates counter-clockwise slowly (70s) */}
-      <OrbitRing radius={260} speed={70} reverse={true} icons={outerOrbitIcons} />
+        {/* Orbit Rings & Orbiting Stack Planets */}
+        {/* Outer Orbit: Radius 260px, rotates counter-clockwise slowly (70s) */}
+        <OrbitRing radius={260} speed={70} reverse={true} icons={outerOrbitIcons} />
 
-      {/* Middle Orbit: Radius 195px, rotates clockwise medium (50s) */}
-      <OrbitRing radius={195} speed={50} reverse={false} icons={middleOrbitIcons} />
+        {/* Middle Orbit: Radius 195px, rotates clockwise medium (50s) */}
+        <OrbitRing radius={195} speed={50} reverse={false} icons={middleOrbitIcons} />
 
-      {/* Inner Orbit: Radius 135px, rotates counter-clockwise faster (35s) */}
-      <OrbitRing radius={135} speed={35} reverse={true} icons={innerOrbitIcons} />
+        {/* Inner Orbit: Radius 135px, rotates counter-clockwise faster (35s) */}
+        <OrbitRing radius={135} speed={35} reverse={true} icons={innerOrbitIcons} />
 
-      {/* Central Profile Avatar Pod */}
-      <motion.div
-        className="relative z-10 w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full p-[4px] bg-gradient-to-tr from-accent-blue via-accent-purple to-accent-pink shadow-[0_0_50px_rgba(79,140,255,0.4)]"
-        animate={{
-          y: [0, -10, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      >
-        <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-[#0b0c11] bg-[#0b0c11]">
-          <img
-            src="/avatar.jpg"
-            alt="Obaid Ait Mattou Profile Picture"
-            className="w-full h-full object-cover"
-          />
-          
-          {/* Subtle inner overlay overlay shadow */}
-          <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-full pointer-events-none" />
-        </div>
-      </motion.div>
+        {/* Central Profile Avatar Pod */}
+        <motion.div
+          className="relative z-10 w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full p-[4px] bg-gradient-to-tr from-accent-blue via-accent-purple to-accent-pink shadow-[0_0_50px_rgba(79,140,255,0.4)]"
+          animate={{
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-[#0b0c11] bg-[#0b0c11]">
+            <img
+              src="/avatar.jpg"
+              alt="Obaid Ait Mattou Profile Picture"
+              className="w-full h-full object-cover"
+            />
+            
+            {/* Subtle inner overlay overlay shadow */}
+            <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-full pointer-events-none" />
+          </div>
+        </motion.div>
 
-      {/* Aesthetic glowing rings immediately behind avatar */}
-      <motion.div
-        className="absolute w-60 h-60 rounded-full border border-accent-blue/15 pointer-events-none"
-        animate={{
-          scale: [0.95, 1.05, 0.95],
-          opacity: [0.3, 0.6, 0.3],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+        {/* Aesthetic glowing rings immediately behind avatar */}
+        <motion.div
+          className="absolute w-60 h-60 rounded-full border border-accent-blue/15 pointer-events-none"
+          animate={{
+            scale: [0.95, 1.05, 0.95],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
     </div>
   );
 }

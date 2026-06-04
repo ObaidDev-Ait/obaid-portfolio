@@ -154,17 +154,17 @@ export function Navbar() {
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
                   className={cn(
-                    "text-lg font-medium transition-colors text-left",
+                    "text-lg font-medium transition-all duration-200 text-left py-3 px-4 rounded-xl w-full flex items-center hover:bg-black/[0.03] dark:hover:bg-white/[0.03] border border-transparent hover:border-black/[0.04] dark:hover:border-white/[0.04]",
                     activeSection === item.href.split("#")[1]
-                      ? "text-foreground"
-                      : "text-muted-foreground"
+                      ? "text-accent-blue bg-accent-blue/[0.05] border-accent-blue/10"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   <motion.span
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + i * 0.05 }}
-                    className="block"
+                    className="block w-full"
                   >
                     {item.label}
                   </motion.span>

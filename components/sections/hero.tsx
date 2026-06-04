@@ -101,7 +101,7 @@ export function Hero() {
             {/* Typing Title */}
             <motion.div
               variants={itemVariants}
-              className="text-xl sm:text-2xl md:text-3xl font-semibold text-muted-foreground mb-6 tracking-tight"
+              className="text-xl sm:text-2xl md:text-3xl font-semibold text-muted-foreground mb-6 tracking-tight min-h-[3.5rem] xs:min-h-[2.5rem] sm:min-h-[2rem] md:min-h-[2.5rem] flex items-center"
             >
               <span className="text-accent-blue">{typedText}</span>
               <span className="typing-cursor" />
@@ -138,8 +138,8 @@ export function Hero() {
                 </svg>
               </a>
               <a
-                href="/cv.pdf"
-                download="Obaid_Ait_Mattou_CV.pdf"
+                href="/obaid.cv.png"
+                download="Obaid_Ait_Mattou_CV.png"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm text-foreground bg-[var(--btn-bg)] border border-[var(--btn-border)] hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)] hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm"
               >
                 Download CV
