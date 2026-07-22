@@ -19,11 +19,14 @@ export interface Project {
   gradient: string;
   image: string;
   title: string;
+  category: string;
+  status: string;
   subtitle: string;
   card: string;
   githubUrl: string;
   liveUrl: string;
   techStack: string[];
+  features: string[];
   summary: string;
   highlights: ProjectHighlight[];
   architecture: string;
@@ -64,95 +67,241 @@ export const personalInfo: PersonalInfo = {
 // ── Projects ─────────────────────────────────────────────────
 export const projects: Project[] = [
   {
-    slug: "contentflow",
-    icon: "✍️",
-    color: "#3b82f6",
-    gradient: "from-blue-500 to-indigo-600",
-    image: "/projects/contentflow.png",
-    title: "AI Publisher Platform",
-    subtitle: "Full-Stack SaaS Application",
-    card: "An AI-powered publishing platform that helps users create, manage, optimize, and publish digital content through a modern and intuitive dashboard.",
+    slug: "aquaflex",
+    icon: "💧",
+    color: "#0284c7",
+    gradient: "from-sky-500 to-blue-600",
+    image: "/projects/aquaflex.png",
+    title: "Aquaflex – Premium Corporate & E-Commerce Platform",
+    category: "Corporate Website",
+    status: "Completed",
+    subtitle: "Premium Corporate & E-Commerce Platform",
+    card: "High-end corporate website and e-commerce platform for Aquaflex, featuring custom product catalogs, responsive design, modern animations, and full SEO optimization.",
     githubUrl: "#",
     liveUrl: "#",
     techStack: [
       "Next.js",
       "React",
       "TypeScript",
-      "Node.js",
-      "NestJS",
-      "PostgreSQL",
       "Tailwind CSS",
-      "REST API",
-      "JWT Authentication",
-      "Docker",
-      "Git & GitHub",
+      "Framer Motion",
+      "Node.js",
+      "Responsive Design",
+      "SEO Optimization",
+      "Vercel",
+    ],
+    features: [
+      "Premium UI/UX",
+      "Product Catalog",
+      "Product Details",
+      "Responsive Design",
+      "Contact Forms",
+      "SEO",
+      "Performance Optimization",
+      "Modern Animations",
     ],
     summary:
-      "AI Publisher Platform is a full-stack SaaS application designed to simplify digital content management and publishing workflows. The platform provides secure authentication, role-based access control, content management tools, and AI-assisted publishing features. Built with scalability, performance, and user experience in mind.",
+      "Aquaflex is a premium corporate website and e-commerce platform crafted to present high-end bedding, foam, and salon solutions. Built with Next.js, TypeScript, and Framer Motion, it offers fluid animations, responsive product showcases, and high-conversion contact flows.",
     highlights: [
       {
-        area: "SaaS Architecture",
+        area: "UI/UX & Aesthetics",
         detail:
-          "Designed and developed a scalable multi-tier SaaS architecture with Next.js, NestJS, and PostgreSQL.",
+          "Designed a high-end, luxury aesthetic tailored for corporate branding with custom typography and interactive components.",
       },
       {
-        area: "Security & Auth",
+        area: "Catalog Architecture",
         detail:
-          "Implemented secure JWT authentication, session handling, and hierarchical Role-Based Access Control (RBAC).",
+          "Built interactive product catalogs and detail views optimized for high visual clarity and fast load performance.",
       },
       {
-        area: "Dashboard UI",
+        area: "SEO & Conversion",
         detail:
-          "Built a modern, highly responsive analytics dashboard with Tailwind CSS and interactive UI elements.",
-      },
-      {
-        area: "Optimization",
-        detail:
-          "Optimized application bundle size, database query performance, and overall maintainability using NestJS patterns.",
-      },
-      {
-        area: "Clean Engineering",
-        detail:
-          "Applied clean architecture principles, strict TypeScript typing, and CI/CD ready workflows.",
+          "Engineered structured metadata, schema markup, and direct WhatsApp / form inquiry funnels.",
       },
     ],
-    architecture: `CLIENT LAYER (Next.js)
-  React Components · Tailwind CSS · Dashboard UI
-  Auth Providers · State Manager · API Client
+    architecture: `CLIENT & PRESENTATION LAYER (Next.js & React)
+  Responsive UI · Framer Motion Animations · Tailwind CSS
+  Product Catalog · Contact & Devis Inquiry Funnel
 ─────────────────────────────────────────────
-API GATEWAY & SECURITY (NestJS)
-  JWT Authenticator · RBAC Guard · Route Interceptor
-  Validation Pipe · Rate Limiter
-─────────────────────────────────────────────
-BUSINESS LOGIC LAYER (NestJS Services)
-  Content Publisher · AI Assistant Module
-  User Manager · Billing & Subscription Engine
-─────────────────────────────────────────────
-PERSISTENCE LAYER (PostgreSQL)
-  Relational Schema · Indexed Queries
-  Connection Pooler · Transaction Coordinator`,
+OPTIMIZATION & DEPLOYMENT LAYER (Vercel)
+  Edge Middleware · SSG / SSR Optimization · SEO Meta Generator`,
     challenges: [
       {
-        title: "Role-Based Access Control Matrix",
+        title: "High-Resolution Visual Performance",
         detail:
-          "Designing and implementing a dynamic, server-enforced RBAC system that correctly restricts actions for authors, editors, and administrators at both API and UI levels.",
+          "Optimizing large product showcase assets while maintaining fluid client-side scrolling and 60fps micro-animations.",
       },
       {
-        title: "AI-Assisted Content Generation Flow",
+        title: "Seamless Multi-Category Catalog Navigation",
         detail:
-          "Building a reliable, event-driven publishing queue that integrates external AI engines, handles rate-limiting and timeouts, and updates the client interface in real time.",
-      },
-      {
-        title: "PostgreSQL Database Performance Tuning",
-        detail:
-          "Optimizing database queries and indexes for high-volume content retrieval, preventing connection leaks under high concurrent dashboard traffic.",
+          "Structuring nested product categories (Matelas, Mousses, Salon Mousse) with zero layout shift during navigation.",
       },
     ],
     impact: [
-      "Streamlines digital publishing workflows, reducing content-to-live time by up to 50%",
-      "Provides seamless and secure access control, eliminating unauthorized data access",
-      "Delivers a highly intuitive dashboard layout that improves user retention and session time",
-      "Dockerized container setup simplifies local development and multi-environment deployment",
+      "Elevated brand positioning for Aquaflex as a premium comfort and mattress manufacturer",
+      "Enhanced lead capture via instant inquiry funnels and mobile responsiveness",
+      "Optimized Google Search visibility through strict technical SEO structure",
+    ],
+  },
+  {
+    slug: "solivra-agency",
+    icon: "🚀",
+    color: "#2563eb",
+    gradient: "from-blue-600 to-indigo-600",
+    image: "/projects/solivra-agency.png",
+    title: "Solivra Agency – Digital Agency Platform",
+    category: "Business Platform",
+    status: "Completed",
+    subtitle: "Digital Agency Platform",
+    card: "Full-stack digital agency platform with lead generation, CMS architecture, admin dashboard, JWT auth, and PostgreSQL persistence.",
+    githubUrl: "#",
+    liveUrl: "#",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "NestJS",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Tailwind CSS",
+      "JWT Authentication",
+      "REST API",
+      "Docker",
+      "Vercel",
+    ],
+    features: [
+      "Services Showcase",
+      "Portfolio",
+      "Lead Generation",
+      "Contact Management",
+      "Admin Dashboard",
+      "CMS Architecture",
+      "Authentication",
+      "Responsive Design",
+    ],
+    summary:
+      "Solivra Agency platform provides a full-featured digital agency portal complete with service showcases, portfolio management, client lead generation, and a secure back-office admin dashboard powered by NestJS and Prisma ORM.",
+    highlights: [
+      {
+        area: "Full-Stack System",
+        detail:
+          "Built end-to-end integration between Next.js frontend, NestJS REST API, and PostgreSQL via Prisma ORM.",
+      },
+      {
+        area: "Admin & Management",
+        detail:
+          "Implemented JWT authentication and RBAC to secure administrative controls over content and client inquiries.",
+      },
+      {
+        area: "Lead Capture",
+        detail:
+          "Constructed dynamic contact & proposal request systems with database logging and client notifications.",
+      },
+    ],
+    architecture: `CLIENT LAYER (Next.js)
+  Services Showcase · Portfolio Showcase · Lead Generation UI
+─────────────────────────────────────────────
+BACKEND API (NestJS + REST API)
+  JWT Auth Guard · Contact Controller · Portfolio CMS Module
+─────────────────────────────────────────────
+DATA LAYER (PostgreSQL + Prisma ORM)
+  Relational Database Schema · Containerized via Docker`,
+    challenges: [
+      {
+        title: "CMS & Front-End Synchronization",
+        detail:
+          "Creating a unified type system shared across NestJS backend entities and Next.js frontend pages for dynamic portfolio rendering.",
+      },
+      {
+        title: "Secure Admin Operations",
+        detail:
+          "Protecting administrative dashboard endpoints against unauthenticated access using stateless JWT tokens.",
+      },
+    ],
+    impact: [
+      "Streamlined client onboarding and project estimate requests",
+      "Centralized agency portfolio and service management",
+      "Containerized deployment workflow using Docker and Vercel",
+    ],
+  },
+  {
+    slug: "trip2go",
+    icon: "🏝️",
+    color: "#059669",
+    gradient: "from-emerald-500 to-teal-700",
+    image: "/projects/trip2go.png",
+    title: "Trip2Go – Tourism & Excursion Booking Platform",
+    category: "Travel Platform",
+    status: "Completed",
+    subtitle: "Tourism & Excursion Booking Platform",
+    card: "Comprehensive tourism booking platform featuring real-time excursion reservations, Stripe payment integration, interactive Google Maps, and user dashboards.",
+    githubUrl: "#",
+    liveUrl: "#",
+    techStack: [
+      "Next.js",
+      "NestJS",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Stripe",
+      "Google Maps API",
+      "Tailwind CSS",
+      "JWT",
+      "Docker",
+      "Vercel",
+    ],
+    features: [
+      "Booking Engine",
+      "Reservation System",
+      "Payments",
+      "Maps",
+      "Search",
+      "Dashboard",
+      "Customer Accounts",
+      "Excursions",
+    ],
+    summary:
+      "Trip2Go is an end-to-end tourism and excursion booking engine for travel experiences. Users can explore curated excursions, locate activities on Google Maps, complete Stripe checkout, and manage reservations via user dashboards.",
+    highlights: [
+      {
+        area: "Booking & Payments",
+        detail:
+          "Integrated Stripe webhooks and payment intents for real-time ticket checkout and order verification.",
+      },
+      {
+        area: "Geospatial Exploration",
+        detail:
+          "Embedded interactive Google Maps with custom markers for trip itineraries and pickup points.",
+      },
+      {
+        area: "Reservation Engine",
+        detail:
+          "Engineered date-slot availability tracking and customer reservation history management.",
+      },
+    ],
+    architecture: `CLIENT FRONTEND (Next.js)
+  Excursion Catalog · Interactive Google Maps · Booking Checkout UI
+─────────────────────────────────────────────
+BACKEND SERVICES (NestJS)
+  Booking Engine · Stripe Webhook Handler · Account Service
+─────────────────────────────────────────────
+PERSISTENCE (PostgreSQL + Prisma)
+  Reservation Schemas · Transactional Availability Checks`,
+    challenges: [
+      {
+        title: "Concurrent Availability Management",
+        detail:
+          "Preventing overbooking of limited excursion seats during simultaneous payment checkouts.",
+      },
+      {
+        title: "Stripe Payment State Reconciliation",
+        detail:
+          "Handling asynchronous payment webhooks reliably to transition booking statuses from pending to confirmed.",
+      },
+    ],
+    impact: [
+      "Automated complete customer reservation and payment flow",
+      "Enhanced booking conversion through interactive geolocation maps",
+      "Scalable infrastructure ready for high seasonal travel demand",
     ],
   },
   {
@@ -161,106 +310,75 @@ PERSISTENCE LAYER (PostgreSQL)
     color: "#22d3ee",
     gradient: "from-cyan-400 to-blue-500",
     image: "/projects/atlasforecast.png",
-    title: "AtlasForecast",
-    subtitle: "Satellite-Enhanced Weather & Geospatial Analytics Platform",
-    card: "Satellite-enhanced weather analytics and geospatial platform with automated risk detection, NASA GIBS temporal imagery, multi-API weather fusion, and intelligent TTL caching.",
+    title: "AtlasForecast – AI Weather & Satellite Analytics Platform",
+    category: "Weather Platform",
+    status: "Completed",
+    subtitle: "AI Weather & Satellite Analytics Platform",
+    card: "Satellite-enhanced weather analytics platform with interactive Leaflet maps, weather radar, NASA GIBS temporal imagery, Chart.js forecasting, and multi-API data fusion.",
     githubUrl: "#",
     liveUrl: "#",
     techStack: [
-      "React.js",
-      "Vite",
-      "Supabase",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
       "Leaflet",
-      "NASA GIBS",
-      "OpenWeatherMap",
-      "Open-Meteo",
-      "OAuth",
+      "Chart.js",
+      "OpenWeather API",
+      "Meteoblue API",
+      "NASA GIBS API",
       "REST API",
-      "Geospatial",
-      "Weather Analytics",
-      "Risk Engine",
-      "TTL Caching",
-      "Satellite Imagery",
+      "Vercel",
+    ],
+    features: [
+      "Weather Forecasts",
+      "Satellite Maps",
+      "Weather Radar",
+      "Interactive Charts",
+      "Alerts",
+      "Air Quality",
+      "Search Cities",
     ],
     summary:
-      "Designed and built a database-driven weather analytics and geospatial platform that fuses data from multiple meteorological APIs and NASA satellite imagery to deliver real-time weather forecasting, automated severe-weather risk analysis, and interactive geospatial visualization. Features an automated weather risk engine that detects heatwaves, storms, and flood conditions using multi-variable threshold analysis.",
+      "AtlasForecast is an advanced weather analytics platform uniting live weather radar, satellite layer visualizers, severe alert monitors, and Chart.js metrics across worldwide cities by orchestrating OpenWeather, Meteoblue, and NASA GIBS data feeds.",
     highlights: [
       {
-        area: "Risk Analysis Engine",
+        area: "Geospatial & Tiles",
         detail:
-          "Automated multi-variable weather risk scoring: temperature anomaly, wind speed, precipitation intensity, and humidity cross-correlation for heatwave, storm, and flood detection.",
+          "Integrated Leaflet maps with custom NASA GIBS satellite tile layers and weather radar overlays.",
       },
       {
-        area: "Satellite Integration",
+        area: "Data Visualization",
         detail:
-          "NASA GIBS tile layer integration with temporal date controls — users explore satellite imagery across time ranges.",
+          "Built interactive temperature, humidity, and barometric trends using responsive Chart.js components.",
       },
       {
-        area: "Geospatial Visualization",
+        area: "Multi-API Fusion",
         detail:
-          "Interactive Leaflet map with weather overlays, risk zones, marker clusters, and responsive viewport management.",
-      },
-      {
-        area: "Multi-API Orchestration",
-        detail:
-          "Parallel data fetching from OpenWeatherMap and Open-Meteo with response normalization and failover logic.",
-      },
-      {
-        area: "Intelligent Caching",
-        detail:
-          "Local cache layer with configurable TTL per data type — balances API rate limits against data staleness thresholds.",
-      },
-      {
-        area: "Auth System",
-        detail:
-          "Supabase Auth with multi-provider OAuth (Google, GitHub), session persistence, and route-level protection.",
+          "Fused multiple meteorological data sources with fallback handling and caching.",
       },
     ],
-    architecture: `CLIENT LAYER
-  React.js + Vite · Leaflet Map · NASA GIBS Tiles
-  Risk Dashboard · Temporal Controls · Alert Feed
+    architecture: `CLIENT (Next.js & React)
+  Leaflet Map Engine · NASA GIBS Tiles · Chart.js Analytics
 ─────────────────────────────────────────────
-DATA ORCHESTRATION LAYER
-  Multi-API Fetcher · Response Normalizer · Failover
-  Cache Manager (TTL) · Rate Limit Guard
-─────────────────────────────────────────────
-ANALYTICS & PROCESSING LAYER
-  Risk Scoring Engine · Threshold Analyzer
-  Heatwave Detector · Storm Classifier · Flood Estimator
-─────────────────────────────────────────────
-EXTERNAL DATA SOURCES
-  OpenWeatherMap API · Open-Meteo API · NASA GIBS API
-─────────────────────────────────────────────
-AUTH & PERSISTENCE (Supabase)
-  Multi-Provider OAuth · Session Management`,
+ORCHESTRATION & API LAYER
+  OpenWeather API · Meteoblue API · Response Normalizer`,
     challenges: [
       {
-        title: "Multi-Source Weather Data Fusion",
+        title: "Multi-Source Data Synchronization",
         detail:
-          "Orchestrating parallel requests to multiple weather APIs with differing response schemas, normalizing the data into a unified internal model, and implementing failover logic.",
+          "Merging atmospheric data from different providers with distinct coordinate systems and update frequencies.",
       },
       {
-        title: "Automated Severe-Weather Risk Detection",
+        title: "High-Performance GIS Layer Rendering",
         detail:
-          "Engineering a multi-variable threshold analysis engine that cross-correlates temperature, wind speed, precipitation, and humidity to classify risk events.",
-      },
-      {
-        title: "Satellite Temporal Exploration at Scale",
-        detail:
-          "Integrating NASA GIBS tile layers with date-parameterized URLs and building temporal navigation controls without overwhelming the tile server.",
-      },
-      {
-        title: "API Cost Optimization via Intelligent Caching",
-        detail:
-          "Designing a TTL-differentiated caching layer reducing external API calls by ~70% while guaranteeing data freshness.",
+          "Maintaining smooth map panning and temporal slider scrubbing while rendering high-resolution satellite tiles.",
       },
     ],
     impact: [
-      "Democratized weather and geospatial analytics — satellite-grade analysis accessible to non-specialist users",
-      "Proactive risk alerting enables early evacuation planning and infrastructure protection",
-      "70% API cost reduction through intelligent TTL caching",
-      "NASA-grade satellite access via temporal GIBS integration",
-      "Supports agricultural planning, urban heat island monitoring, and disaster preparedness",
+      "Provides accessible, satellite-grade meteorological insights to users",
+      "Interactive charts make complex climate patterns easy to analyze",
+      "Fast global city search with instant forecast updates",
     ],
   },
   {
@@ -269,211 +387,170 @@ AUTH & PERSISTENCE (Supabase)
     color: "#f59e0b",
     gradient: "from-amber-400 to-red-500",
     image: "/projects/kechbus-ticket.png",
-    title: "KechBus Ticket",
-    subtitle: "Real-Time Urban Transit & Digital Ticketing Platform",
-    card: "Real-time urban transit platform with concurrent-safe seat reservation, digital QR ticketing, live fleet tracking, and role-based access. Engineered for concurrency safety and smart city scalability.",
+    title: "KechBus Ticket – Smart Transportation & Digital Ticketing",
+    category: "Transportation",
+    status: "Completed",
+    subtitle: "Smart Transportation & Digital Ticketing",
+    card: "Smart urban transportation and ticketing system with live GPS tracking via Socket.IO, digital QR tickets, route management, and driver/admin dashboards.",
     githubUrl: "#",
     liveUrl: "#",
     techStack: [
-      "React.js",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "NestJS",
       "Node.js",
-      "Express",
-      "MySQL",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Google Maps API",
+      "Socket.IO",
+      "QR Code",
+      "JWT Authentication",
+      "Tailwind CSS",
+      "Docker",
       "REST API",
-      "Real-Time",
-      "WebSocket",
-      "QR Ticketing",
-      "GPS Tracking",
-      "RBAC",
-      "Optimistic Locking",
-      "Event-Driven",
+    ],
+    features: [
+      "Online Ticket Booking",
+      "QR Tickets",
+      "Live Tracking",
+      "Route Management",
+      "Driver Dashboard",
+      "Notifications",
+      "Admin Dashboard",
     ],
     summary:
-      "Engineered a real-time urban transportation management platform that digitizes the entire bus ticketing lifecycle — from route discovery and seat reservation to digital ticket issuance and live fleet tracking. Features concurrent-safe seat allocation, real-time data synchronization, and a role-based authentication layer.",
+      "KechBus Ticket is a modern transit digitizing platform for public and private bus routes. It features online ticket booking, tampered-proof QR validation, live GPS fleet tracking over WebSockets, and administrative control panels.",
     highlights: [
       {
-        area: "Reservation Engine",
+        area: "Real-Time Fleet Tracking",
         detail:
-          "Concurrent-safe seat allocation with optimistic locking to prevent double-booking under high load.",
+          "Engineered WebSocket (Socket.IO) broadcast pipelines for real-time bus location updates on Google Maps.",
       },
       {
-        area: "Digital Ticketing",
+        area: "Digital QR Ticketing",
         detail:
-          "Unique ticket generation with QR-encodable references, validation endpoints, and expiry management.",
+          "Generated tamper-proof QR codes verified by driver mobile dashboards.",
       },
       {
-        area: "Real-Time Tracking",
+        area: "Route & Fleet Management",
         detail:
-          "Live bus position ingestion and propagation to connected clients via event-driven architecture.",
-      },
-      {
-        area: "Data Sync",
-        detail:
-          "Bi-directional synchronization pipeline ensuring consistency between mobile clients and central database.",
-      },
-      {
-        area: "Database Design",
-        detail:
-          "Third-normal-form relational schema with composite indexes, foreign key constraints, and transactional writes.",
-      },
-      {
-        area: "API Design",
-        detail:
-          "RESTful resource-oriented API with versioning, pagination, filtering, and standardized error responses.",
+          "Built administrative dashboards for route scheduling, seat capacity management, and analytics.",
       },
     ],
-    architecture: `CLIENT LAYER
-  React.js SPA · Real-Time Listeners · QR Ticket View
-  Route Explorer · Seat Selector · Live Map
+    architecture: `CLIENT & DRIVER DASHBOARD (React & Next.js)
+  Passenger Booking UI · Driver Scan App · Google Maps Tracking
 ─────────────────────────────────────────────
-API LAYER (Node.js / Express)
-  Auth Middleware · Role Guard · Reservation Controller
-  Ticket Issuer · Tracking Ingestor · Sync Coordinator
+REAL-TIME BACKEND (NestJS + Socket.IO)
+  GPS Ingestion Engine · QR Verification · WebSocket Broadcaster
 ─────────────────────────────────────────────
-REAL-TIME ENGINE
-  WebSocket / SSE · Event Bus · Position Broadcast
-  Client State Reconciliation
-─────────────────────────────────────────────
-DATA LAYER (MySQL)
-  Normalized Schema · Optimistic Locking · Audit Logs
-  Composite Indexes · Transactional Writes`,
+PERSISTENCE (PostgreSQL + Prisma)
+  Bus Routes · Seat Inventory · Digital Ticket Ledger`,
     challenges: [
       {
-        title: "Concurrent Seat Reservation Integrity",
+        title: "High-Frequency Location Updates",
         detail:
-          "Solving the double-booking problem under concurrent requests using optimistic locking with version-check-and-swap at the database level.",
+          "Optimizing WebSocket telemetry data fanout to handle hundreds of concurrent mobile map clients without server lag.",
       },
       {
-        title: "Real-Time Fleet Position at Scale",
+        title: "QR Ticket Validation Security",
         detail:
-          "Designing an event-driven position ingestion pipeline that accepts high-frequency GPS updates and fans them out to subscribed clients.",
-      },
-      {
-        title: "Relational Schema for Multi-Entity Transit Domain",
-        detail:
-          "Modeling routes, stops, schedules, buses, drivers, passengers, tickets, and reservations in a fully normalized relational schema.",
-      },
-      {
-        title: "Digital Ticket Lifecycle Management",
-        detail:
-          "Implementing a tamper-resistant digital ticket pipeline: generation, QR encoding, server-side expiry, and ride-completion state transitions.",
+          "Ensuring single-use verification logic for QR tickets to prevent double-boarding fraud.",
       },
     ],
     impact: [
-      "Eliminated paper ticketing — fully digital lifecycle reduces cost and fraud",
-      "Live fleet visibility enables dynamic trip planning, improving ridership satisfaction",
-      "Centralized data model enables route optimization and demand analysis",
-      "Concurrent-safe reservation engine prevents double-booking revenue leakage",
-      "Smart city-ready architecture supports municipal transit API integration",
+      "Eliminates manual paper ticketing with secure QR validation",
+      "Improves commuter satisfaction through real-time transit tracking",
+      "Streamlines fleet operations for bus drivers and dispatchers",
     ],
   },
   {
-    slug: "vacations-manager",
-    icon: "🏢",
+    slug: "ai-resume-builder",
+    icon: "📄",
     color: "#a855f7",
-    gradient: "from-purple-500 to-pink-500",
-    image: "/projects/vacations-manager.png",
-    title: "Vacations Manager",
-    subtitle: "Enterprise-Grade Workforce Absence Orchestration Platform",
-    card: "Enterprise workforce absence management PWA with 7-tier RBAC, JWT-secured auth, autonomous business-day computation, offline-first architecture, and automated PDF reporting.",
+    gradient: "from-purple-500 to-pink-600",
+    image: "/projects/ai-resume-builder.png",
+    title: "AI Resume Builder – AI Resume SaaS",
+    category: "AI SaaS",
+    status: "Completed",
+    subtitle: "AI Resume SaaS Platform",
+    card: "AI-powered resume creation SaaS platform with automatic tailing, ATS score optimization, live PDF preview, streaming generation, Redis caching, and Stripe subscriptions.",
     githubUrl: "#",
     liveUrl: "#",
     techStack: [
-      "React.js",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "NestJS",
       "Node.js",
-      "Express",
-      "MySQL",
-      "JWT",
-      "PWA",
-      "Service Workers",
-      "RBAC",
-      "REST API",
-      "Offline-First",
-      "PDF Generation",
-      "HttpOnly Cookies",
-      "Background Sync",
-      "IndexedDB",
+      "PostgreSQL",
+      "Prisma ORM",
+      "OpenAI API",
+      "Redis",
+      "Stripe",
+      "Tailwind CSS",
+      "Puppeteer PDF",
+      "JWT Auth",
+      "Docker",
+      "Vercel",
+    ],
+    features: [
+      "AI Resume Generation",
+      "ATS Score Optimization",
+      "Live PDF Preview",
+      "Job Description Matching",
+      "Custom Templates",
+      "Subscription Plans",
+      "User Dashboard",
+      "Export PDF",
     ],
     summary:
-      "Architected and shipped a production-grade Progressive Web App that automates end-to-end employee leave lifecycle management. Implements a 7-tier Role-Based Access Control matrix, cryptographically secured JWT authentication with HttpOnly cookie transport, and an autonomous business-day calculation engine. Built with an offline-first architecture leveraging Service Workers.",
+      "AI Resume Builder is a SaaS platform designed to craft ATS-friendly, highly targeted professional resumes in minutes using AI models. Features interactive prompt tailoring, real-time PDF previewing, and subscription management.",
     highlights: [
       {
-        area: "Auth Architecture",
+        area: "AI Tailoring Engine",
         detail:
-          "Stateless JWT with HttpOnly secure cookies, refresh token rotation, and session invalidation.",
+          "Built AI prompt pipelines matching resume bullet points against job description keywords for high ATS scoring.",
       },
       {
-        area: "Access Control",
+        area: "Live Rendering Pipeline",
         detail:
-          "Fine-grained RBAC engine with 7 hierarchical permission tiers and middleware-level enforcement.",
+          "Developed serverless Puppeteer HTML-to-PDF compilation with instant client preview.",
       },
       {
-        area: "Business Logic",
+        area: "SaaS Monetization",
         detail:
-          "Custom calendar computation engine: auto-excludes holidays, weekends, and org-specific non-working days.",
-      },
-      {
-        area: "Offline Capability",
-        detail:
-          "Service Worker lifecycle management with precaching, runtime caching strategies, and background sync.",
-      },
-      {
-        area: "Caching Layer",
-        detail:
-          "Dynamic cache-first / network-first strategy selection based on resource criticality.",
-      },
-      {
-        area: "Document Pipeline",
-        detail:
-          "Server-side PDF generation for administrative reports, leave summaries, and compliance documents.",
+          "Implemented Stripe subscriptions with usage tier enforcement via Redis rate limiters.",
       },
     ],
-    architecture: `CLIENT (PWA)
-  React.js SPA · Service Workers · IndexedDB Cache
-  Offline Queue · Background Sync · Web App Manifest
+    architecture: `FRONTEND DASHBOARD (Next.js & React)
+  Resume Studio · ATS Analyzer · Live PDF Preview Pane
 ─────────────────────────────────────────────
-API GATEWAY (Node.js / Express)
-  JWT Middleware · RBAC Guard · Rate Limiter
-  Request Validation · Error Boundary
+BACKEND API (NestJS + OpenAI + Redis)
+  AI Generation Pipeline · Redis Cache Guard · Puppeteer PDF Renderer
 ─────────────────────────────────────────────
-BUSINESS LOGIC LAYER
-  Leave Orchestrator · Calendar Engine · PDF Generator
-  Notification Dispatcher · Approval Workflow
-─────────────────────────────────────────────
-DATA LAYER (MySQL)
-  Normalized Schema · Transactions · Indexed Queries
-  Parameterized Statements · Audit Trail`,
+PERSISTENCE LAYER (PostgreSQL + Prisma)
+  User Profiles · Resume Schemas · Subscription Ledger`,
     challenges: [
       {
-        title: "Autonomous Business-Day Resolution",
+        title: "Real-Time PDF Compilation Latency",
         detail:
-          "Designing a date computation engine that dynamically accounts for country-specific holidays, configurable weekend patterns, and org-level custom closures.",
+          "Optimizing server-side Puppeteer PDF rendering to deliver sub-second preview updates during live editing.",
       },
       {
-        title: "Offline-First Reliability Under Network Partition",
+        title: "ATS Keyword Extraction Accuracy",
         detail:
-          "Implementing a resilient offline queue with conflict resolution so that leave requests submitted offline are seamlessly synced on reconnect.",
-      },
-      {
-        title: "Scalable Multi-Tier Authorization",
-        detail:
-          "Engineering a 7-level permission hierarchy enforced at both API middleware and UI component layers with zero privilege-escalation surface.",
-      },
-      {
-        title: "Secure Token Lifecycle",
-        detail:
-          "Managing JWT expiration, silent refresh, and HttpOnly cookie storage to eliminate XSS-based token theft while maintaining frictionless UX.",
+          "Fine-tuning prompt engineering to reliably extract hard skills and actionable verbs without content hallucination.",
       },
     ],
     impact: [
-      "Reduced administrative overhead by ~60% — automated leave balance and approval routing",
-      "Zero-downtime accessibility — offline-first PWA works in low-connectivity zones",
-      "Compliance-ready audit trail — every action logged with timestamps and actor identity",
-      "On-demand PDF reporting for payroll integration and management review",
-      "Multi-department scalability — new teams onboarded without codebase modification",
+      "Boosts job application callback rates by tailoring resumes directly to specific job descriptions",
+      "Sub-second live preview improves user editing satisfaction",
+      "Automated subscription management and secure token usage limits",
     ],
   },
 ];
+
 
 // ── Skills ───────────────────────────────────────────────────
 export const skills: SkillCategory[] = [

@@ -62,10 +62,22 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           aria-label={`View case study for ${project.title}`}
         />
 
+        {/* Project Cover Image */}
+        {project.image && (
+          <div className="relative w-full h-44 mb-5 rounded-xl overflow-hidden bg-black/5 dark:bg-white/5 border border-white/10 group-hover:shadow-md transition-all">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
+          </div>
+        )}
+
         {/* Header */}
-        <div className="flex items-start justify-between mb-5">
+        <div className="flex items-start justify-between mb-4">
           <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center text-xl relative z-0"
+            className="w-10 h-10 rounded-xl flex items-center justify-center text-lg relative z-0"
             style={{ background: `${project.color}15` }}
           >
             {project.icon}
@@ -86,6 +98,19 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         {/* Content */}
         <div className="relative flex flex-col flex-1">
+          <div className="flex items-center gap-2 mb-2 flex-wrap">
+            <span className="font-mono text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-md bg-accent-blue/10 text-accent-blue border border-accent-blue/20">
+              {project.category}
+            </span>
+            <span className={cn(
+              "font-mono text-[10px] uppercase font-semibold px-2 py-0.5 rounded-md border",
+              project.status === "Completed" 
+                ? "bg-emerald-500/10 text-emerald-600 border-emerald-500/20" 
+                : "bg-purple-500/10 text-purple-600 border-purple-500/20"
+            )}>
+              {project.status}
+            </span>
+          </div>
           <h3 className="text-xl font-bold tracking-tight mb-1">
             {project.title}
           </h3>

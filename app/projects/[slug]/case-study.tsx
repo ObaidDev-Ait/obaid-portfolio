@@ -58,6 +58,14 @@ export function ProjectCaseStudy({ project }: Props) {
                   {project.icon}
                 </div>
                 <div>
+                  <div className="flex items-center gap-2 mb-2 flex-wrap">
+                    <span className="font-mono text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-md bg-accent-blue/10 text-accent-blue border border-accent-blue/20">
+                      {project.category}
+                    </span>
+                    <span className="font-mono text-[10px] uppercase font-semibold px-2 py-0.5 rounded-md border bg-emerald-500/10 text-emerald-600 border-emerald-500/20">
+                      {project.status}
+                    </span>
+                  </div>
                   <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
                     {project.title}
                   </h1>
@@ -119,6 +127,24 @@ export function ProjectCaseStudy({ project }: Props) {
               {project.summary}
             </p>
           </motion.div>
+
+          {/* Key Features */}
+          {project.features && project.features.length > 0 && (
+            <motion.div variants={item} className="mb-12">
+              <SectionTitle icon="✨" title="Key Features" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {project.features.map((feat) => (
+                  <div
+                    key={feat}
+                    className="glass-card rounded-xl px-4 py-3 flex items-center gap-3 border border-border/50"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-accent-blue shrink-0" />
+                    <span className="text-sm font-medium text-foreground">{feat}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          )}
 
           {/* Tech Stack */}
           <motion.div variants={item} className="mb-12">
