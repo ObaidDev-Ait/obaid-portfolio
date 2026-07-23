@@ -146,9 +146,12 @@ export function ProjectCaseStudy({ project }: Props) {
             </motion.div>
           )}
 
-          {/* Tech Stack */}
+          {/* Tech Stack / Website Technologies */}
           <motion.div variants={item} className="mb-12">
-            <SectionTitle icon="🛠️" title="Tech Stack" />
+            <SectionTitle
+              icon="🛠️"
+              title={project.techStackTitle || "Tech Stack"}
+            />
             <div className="flex flex-wrap gap-2">
               {project.techStack.map((tech) => (
                 <span
@@ -161,9 +164,12 @@ export function ProjectCaseStudy({ project }: Props) {
             </div>
           </motion.div>
 
-          {/* Engineering Highlights */}
+          {/* Highlights */}
           <motion.div variants={item} className="mb-12">
-            <SectionTitle icon="⚡" title="Engineering Highlights" />
+            <SectionTitle
+              icon={project.highlightsTitle ? "🎯" : "⚡"}
+              title={project.highlightsTitle || "Engineering Highlights"}
+            />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {project.highlights.map((h) => (
                 <div
@@ -181,13 +187,44 @@ export function ProjectCaseStudy({ project }: Props) {
             </div>
           </motion.div>
 
-          {/* Architecture */}
-          <motion.div variants={item} className="mb-12">
-            <SectionTitle icon="🏗️" title="Architecture" />
-            <pre className="glass-card rounded-xl p-6 font-mono text-sm text-accent-cyan leading-relaxed whitespace-pre-wrap overflow-x-auto">
-              {project.architecture}
-            </pre>
-          </motion.div>
+          {/* Development Process */}
+          {project.developmentProcess && project.developmentProcess.length > 0 && (
+            <motion.div variants={item} className="mb-12">
+              <SectionTitle icon="⚙️" title="Development Process" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {project.developmentProcess.map((step, idx) => (
+                  <div
+                    key={step}
+                    className="glass-card rounded-xl p-5 border border-border/50 flex flex-col justify-between group hover:border-accent-blue/40 transition-colors"
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="font-mono text-xs font-bold text-accent-blue px-2.5 py-1 rounded bg-accent-blue/10 border border-accent-blue/20">
+                        Step 0{idx + 1}
+                      </span>
+                      {idx < project.developmentProcess!.length - 1 && (
+                        <span className="hidden sm:inline font-mono text-xs text-muted-foreground/60">
+                          →
+                        </span>
+                      )}
+                    </div>
+                    <div className="text-sm font-semibold text-foreground">
+                      {step}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
+          {/* Architecture (if present) */}
+          {project.architecture && (
+            <motion.div variants={item} className="mb-12">
+              <SectionTitle icon="🏗️" title="Architecture" />
+              <pre className="glass-card rounded-xl p-6 font-mono text-sm text-accent-cyan leading-relaxed whitespace-pre-wrap overflow-x-auto">
+                {project.architecture}
+              </pre>
+            </motion.div>
+          )}
 
           {/* Challenges */}
           <motion.div variants={item} className="mb-12">

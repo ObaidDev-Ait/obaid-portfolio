@@ -26,10 +26,13 @@ export interface Project {
   githubUrl: string;
   liveUrl: string;
   techStack: string[];
+  techStackTitle?: string;
   features: string[];
   summary: string;
   highlights: ProjectHighlight[];
-  architecture: string;
+  highlightsTitle?: string;
+  architecture?: string;
+  developmentProcess?: string[];
   challenges: ProjectChallenge[];
   impact: string[];
 }
@@ -153,75 +156,91 @@ OPTIMIZATION & DEPLOYMENT LAYER (Vercel)
     category: "Business Platform",
     status: "Completed",
     subtitle: "Digital Agency Platform",
-    card: "Full-stack digital agency platform with lead generation, CMS architecture, admin dashboard, JWT auth, and PostgreSQL persistence.",
+    card: "Modern digital agency platform built with WordPress and Elementor Pro, featuring custom business layouts, lead generation flows, and full SEO optimization.",
     githubUrl: "#",
     liveUrl: "#",
+    techStackTitle: "Website Technologies",
     techStack: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "NestJS",
-      "PostgreSQL",
-      "Prisma ORM",
-      "Tailwind CSS",
-      "JWT Authentication",
-      "REST API",
-      "Docker",
-      "Vercel",
+      "WordPress",
+      "Elementor Pro",
+      "PHP",
+      "MySQL",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Responsive Design",
+      "Yoast SEO",
+      "Contact Form",
+      "LiteSpeed Cache",
     ],
     features: [
       "Services Showcase",
-      "Portfolio",
-      "Lead Generation",
+      "Portfolio Showcase",
+      "Lead Generation Forms",
       "Contact Management",
-      "Admin Dashboard",
-      "CMS Architecture",
-      "Authentication",
-      "Responsive Design",
+      "Easy Content CMS",
+      "On-Page SEO",
+      "Mobile Responsive",
     ],
     summary:
-      "Solivra Agency platform provides a full-featured digital agency portal complete with service showcases, portfolio management, client lead generation, and a secure back-office admin dashboard powered by NestJS and Prisma ORM.",
+      "Solivra Agency is a professional digital agency website built using WordPress and Elementor Pro. Tailored to showcase agency services, present client portfolios, drive lead acquisition through optimized contact funnels, and offer high-performance mobile responsiveness.",
+    highlightsTitle: "Website Highlights",
     highlights: [
       {
-        area: "Full-Stack System",
+        area: "Professional Business Website",
         detail:
-          "Built end-to-end integration between Next.js frontend, NestJS REST API, and PostgreSQL via Prisma ORM.",
+          "Designed and customized a modern WordPress website tailored to the client's brand identity and business goals.",
       },
       {
-        area: "Admin & Management",
+        area: "Responsive Experience",
         detail:
-          "Implemented JWT authentication and RBAC to secure administrative controls over content and client inquiries.",
+          "Optimized every page for desktop, tablet, and mobile devices to ensure a smooth user experience.",
       },
       {
-        area: "Lead Capture",
+        area: "SEO Optimization",
         detail:
-          "Constructed dynamic contact & proposal request systems with database logging and client notifications.",
+          "Configured on-page SEO, clean page hierarchy, metadata, and performance optimizations to improve search visibility.",
+      },
+      {
+        area: "Lead Generation",
+        detail:
+          "Implemented professional contact forms and inquiry flows to help convert visitors into potential clients.",
+      },
+      {
+        area: "Performance",
+        detail:
+          "Optimized page loading speed through caching, image optimization, and lightweight WordPress configuration.",
+      },
+      {
+        area: "Content Management",
+        detail:
+          "Configured an easy-to-manage WordPress dashboard allowing the client to update pages and content independently.",
       },
     ],
-    architecture: `CLIENT LAYER (Next.js)
-  Services Showcase · Portfolio Showcase · Lead Generation UI
-─────────────────────────────────────────────
-BACKEND API (NestJS + REST API)
-  JWT Auth Guard · Contact Controller · Portfolio CMS Module
-─────────────────────────────────────────────
-DATA LAYER (PostgreSQL + Prisma ORM)
-  Relational Database Schema · Containerized via Docker`,
+    developmentProcess: [
+      "Planning & Wireframing",
+      "WordPress Installation",
+      "Elementor Page Building",
+      "Responsive Optimization",
+      "SEO Configuration",
+      "Testing & Deployment",
+    ],
     challenges: [
       {
-        title: "CMS & Front-End Synchronization",
+        title: "Custom Responsive Layout Design",
         detail:
-          "Creating a unified type system shared across NestJS backend entities and Next.js frontend pages for dynamic portfolio rendering.",
+          "Designing complex responsive breakpoints and template structures with Elementor Pro while maintaining clean code output and visual precision across device viewports.",
       },
       {
-        title: "Secure Admin Operations",
+        title: "Page Speed & Caching Optimization",
         detail:
-          "Protecting administrative dashboard endpoints against unauthenticated access using stateless JWT tokens.",
+          "Minimizing plugin overhead, optimizing WebP images, and configuring LiteSpeed Cache to achieve high performance scores on mobile and desktop.",
       },
     ],
     impact: [
-      "Streamlined client onboarding and project estimate requests",
-      "Centralized agency portfolio and service management",
-      "Containerized deployment workflow using Docker and Vercel",
+      "Delivered a premium digital agency web presence aligned with modern agency aesthetics",
+      "Enhanced lead capture efficiency with interactive contact and proposal forms",
+      "Empowered client independence through an intuitive WordPress content dashboard",
     ],
   },
   {
