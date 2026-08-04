@@ -17,6 +17,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -64,18 +65,41 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         />
 
         {/* Project Cover Image */}
-        {project.image && (
-          <div className="relative w-full h-48 mb-5 rounded-xl overflow-hidden bg-black/5 dark:bg-white/5 border border-white/10 group-hover:shadow-md transition-all">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity z-10 pointer-events-none" />
-          </div>
-        )}
+        <div className="relative w-full h-48 mb-5 rounded-xl overflow-hidden bg-black/5 dark:bg-white/5 border border-white/10 group-hover:shadow-md transition-all">
+          {project.image && !imgError ? (
+            <>
+              <Image
+                src={project.image}
+                alt={`${project.title} Cover Screenshot`}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                onError={() => setImgError(true)}
+                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity z-10 pointer-events-none" />
+            </>
+          ) : (
+            <div
+              className="w-full h-full flex flex-col items-center justify-center gap-2 p-4 text-center relative overflow-hidden"
+              style={{
+                background: `linear-gradient(135deg, ${project.color}20 0%, ${project.color}05 100%)`,
+              }}
+            >
+              <div
+                className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl shadow-sm mb-1"
+                style={{ background: `${project.color}30` }}
+              >
+                {project.icon}
+              </div>
+              <span className="font-bold text-sm text-foreground tracking-tight">
+                {project.title}
+              </span>
+              <span className="font-mono text-[10px] uppercase text-muted-foreground tracking-wider">
+                {project.category}
+              </span>
+            </div>
+          )}
+        </div>
 
         {/* Header */}
         <div className="flex items-start justify-between mb-4">

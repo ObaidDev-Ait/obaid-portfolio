@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export function ProjectCaseStudy({ project }: Props) {
+  const [imgError, setImgError] = useState(false);
   const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -106,23 +108,46 @@ export function ProjectCaseStudy({ project }: Props) {
           </motion.div>
 
           {/* Project Image Showcase */}
-          {project.image && (
-            <motion.div
-              variants={item}
-              className="relative mb-12 rounded-2xl overflow-hidden glass-card border border-border shadow-[0_20px_50px_var(--img-shadow)] group/img aspect-video"
-              style={{ boxShadow: `0 20px 50px ${project.color}10` }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 opacity-50 group-hover/img:opacity-30 transition-opacity duration-300 pointer-events-none" />
-              <Image
-                src={project.image}
-                alt={`${project.title} Interface`}
-                fill
-                priority
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover/img:scale-[1.02]"
-              />
-            </motion.div>
-          )}
+          <motion.div
+            variants={item}
+            className="relative mb-12 rounded-2xl overflow-hidden glass-card border border-border shadow-[0_20px_50px_var(--img-shadow)] group/img aspect-video"
+            style={{ boxShadow: `0 20px 50px ${project.color}10` }}
+          >
+            {project.image && !imgError ? (
+              <>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 opacity-50 group-hover/img:opacity-30 transition-opacity duration-300 pointer-events-none" />
+                <Image
+                  src={project.image}
+                  alt={`${project.title} Interface`}
+                  fill
+                  priority
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                  onError={() => setImgError(true)}
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover/img:scale-[1.02]"
+                />
+              </>
+            ) : (
+              <div
+                className="w-full h-full flex flex-col items-center justify-center gap-3 p-8 text-center"
+                style={{
+                  background: `linear-gradient(135deg, ${project.color}25 0%, ${project.color}05 100%)`,
+                }}
+              >
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-md mb-2"
+                  style={{ background: `${project.color}35` }}
+                >
+                  {project.icon}
+                </div>
+                <h3 className="text-xl font-bold tracking-tight text-foreground">
+                  {project.title}
+                </h3>
+                <span className="font-mono text-xs uppercase text-muted-foreground tracking-wider">
+                  {project.category}
+                </span>
+              </div>
+            )}
+          </motion.div>
 
           {/* Summary */}
           <motion.div variants={item} className="mb-12">
