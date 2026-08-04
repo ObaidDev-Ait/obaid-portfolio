@@ -70,177 +70,73 @@ export const personalInfo: PersonalInfo = {
 // ── Projects ─────────────────────────────────────────────────
 export const projects: Project[] = [
   {
-    slug: "aquaflex",
-    icon: "💧",
-    color: "#0284c7",
-    gradient: "from-sky-500 to-blue-600",
-    image: "/projects/aquaflex.png",
-    title: "Aquaflex – Premium Corporate & E-Commerce Platform",
-    category: "Corporate Website",
+    slug: "atlasforecast",
+    icon: "🌍",
+    color: "#22d3ee",
+    gradient: "from-cyan-400 to-blue-500",
+    image: "/projects/atlasforecast.png",
+    title: "AtlasForecast",
+    category: "Weather Platform",
     status: "Completed",
-    subtitle: "Premium Corporate & E-Commerce Platform",
-    card: "High-end corporate website and e-commerce platform for Aquaflex, featuring custom product catalogs, responsive design, modern animations, and full SEO optimization.",
-    githubUrl: "#",
+    subtitle: "Modern Weather Forecasting & Climate Analytics",
+    card: "A modern weather forecasting platform providing real-time weather, forecasts, interactive maps, and climate insights with a clean responsive interface.",
+    githubUrl: "https://github.com/ObaidDev-Ait",
     liveUrl: "#",
     techStack: [
       "Next.js",
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "Framer Motion",
-      "Node.js",
-      "Responsive Design",
-      "SEO Optimization",
+      "OpenWeather API",
+      "Meteoblue API",
+      "Leaflet",
+      "Chart.js",
       "Vercel",
     ],
     features: [
-      "Premium UI/UX",
-      "Product Catalog",
-      "Product Details",
-      "Responsive Design",
-      "Contact Forms",
-      "SEO",
-      "Performance Optimization",
-      "Modern Animations",
+      "Real-Time Weather",
+      "Interactive Maps",
+      "7-Day Forecasts",
+      "Radar Imagery",
+      "Climate Insights",
+      "Location Search",
+      "Responsive Interface",
     ],
     summary:
-      "Aquaflex is a premium corporate website and e-commerce platform crafted to present high-end bedding, foam, and salon solutions. Built with Next.js, TypeScript, and Framer Motion, it offers fluid animations, responsive product showcases, and high-conversion contact flows.",
+      "AtlasForecast is a modern weather forecasting platform providing real-time weather data, multi-day forecasts, interactive Leaflet maps, and climate insights through a clean, highly responsive interface.",
     highlights: [
       {
-        area: "UI/UX & Aesthetics",
+        area: "Interactive GIS Maps",
         detail:
-          "Designed a high-end, luxury aesthetic tailored for corporate branding with custom typography and interactive components.",
+          "Integrated Leaflet maps with live weather radar and satellite layer visualizers.",
       },
       {
-        area: "Catalog Architecture",
+        area: "Data Visualization",
         detail:
-          "Built interactive product catalogs and detail views optimized for high visual clarity and fast load performance.",
+          "Built responsive Chart.js visualizers for hourly and weekly meteorological metrics.",
       },
       {
-        area: "SEO & Conversion",
+        area: "Multi-API Integration",
         detail:
-          "Engineered structured metadata, schema markup, and direct WhatsApp / form inquiry funnels.",
+          "Orchestrated OpenWeather and Meteoblue APIs with automatic failover and caching.",
       },
-    ],
-    architecture: `CLIENT & PRESENTATION LAYER (Next.js & React)
-  Responsive UI · Framer Motion Animations · Tailwind CSS
-  Product Catalog · Contact & Devis Inquiry Funnel
-─────────────────────────────────────────────
-OPTIMIZATION & DEPLOYMENT LAYER (Vercel)
-  Edge Middleware · SSG / SSR Optimization · SEO Meta Generator`,
-    challenges: [
-      {
-        title: "High-Resolution Visual Performance",
-        detail:
-          "Optimizing large product showcase assets while maintaining fluid client-side scrolling and 60fps micro-animations.",
-      },
-      {
-        title: "Seamless Multi-Category Catalog Navigation",
-        detail:
-          "Structuring nested product categories (Matelas, Mousses, Salon Mousse) with zero layout shift during navigation.",
-      },
-    ],
-    impact: [
-      "Elevated brand positioning for Aquaflex as a premium comfort and mattress manufacturer",
-      "Enhanced lead capture via instant inquiry funnels and mobile responsiveness",
-      "Optimized Google Search visibility through strict technical SEO structure",
-    ],
-  },
-  {
-    slug: "solivra-agency",
-    icon: "🚀",
-    color: "#2563eb",
-    gradient: "from-blue-600 to-indigo-600",
-    image: "/projects/solivra-agency.png",
-    title: "Solivra Agency – Digital Agency Platform",
-    category: "Business Platform",
-    status: "Completed",
-    subtitle: "Digital Agency Platform",
-    card: "Modern digital agency platform built with WordPress and Elementor Pro, featuring custom business layouts, lead generation flows, and full SEO optimization.",
-    githubUrl: "#",
-    liveUrl: "#",
-    techStackTitle: "Website Technologies",
-    techStack: [
-      "WordPress",
-      "Elementor Pro",
-      "PHP",
-      "MySQL",
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "Responsive Design",
-      "Yoast SEO",
-      "Contact Form",
-      "LiteSpeed Cache",
-    ],
-    features: [
-      "Services Showcase",
-      "Portfolio Showcase",
-      "Lead Generation Forms",
-      "Contact Management",
-      "Easy Content CMS",
-      "On-Page SEO",
-      "Mobile Responsive",
-    ],
-    summary:
-      "Solivra Agency is a professional digital agency website built using WordPress and Elementor Pro. Tailored to showcase agency services, present client portfolios, drive lead acquisition through optimized contact funnels, and offer high-performance mobile responsiveness.",
-    highlightsTitle: "Website Highlights",
-    highlights: [
-      {
-        area: "Professional Business Website",
-        detail:
-          "Designed and customized a modern WordPress website tailored to the client's brand identity and business goals.",
-      },
-      {
-        area: "Responsive Experience",
-        detail:
-          "Optimized every page for desktop, tablet, and mobile devices to ensure a smooth user experience.",
-      },
-      {
-        area: "SEO Optimization",
-        detail:
-          "Configured on-page SEO, clean page hierarchy, metadata, and performance optimizations to improve search visibility.",
-      },
-      {
-        area: "Lead Generation",
-        detail:
-          "Implemented professional contact forms and inquiry flows to help convert visitors into potential clients.",
-      },
-      {
-        area: "Performance",
-        detail:
-          "Optimized page loading speed through caching, image optimization, and lightweight WordPress configuration.",
-      },
-      {
-        area: "Content Management",
-        detail:
-          "Configured an easy-to-manage WordPress dashboard allowing the client to update pages and content independently.",
-      },
-    ],
-    developmentProcess: [
-      "Planning & Wireframing",
-      "WordPress Installation",
-      "Elementor Page Building",
-      "Responsive Optimization",
-      "SEO Configuration",
-      "Testing & Deployment",
     ],
     challenges: [
       {
-        title: "Custom Responsive Layout Design",
+        title: "Geospatial Map Rendering",
         detail:
-          "Designing complex responsive breakpoints and template structures with Elementor Pro while maintaining clean code output and visual precision across device viewports.",
+          "Optimizing Leaflet tile loading and temporal slider scrubbing across desktop and mobile devices.",
       },
       {
-        title: "Page Speed & Caching Optimization",
+        title: "Multi-Source API Normalization",
         detail:
-          "Minimizing plugin overhead, optimizing WebP images, and configuring LiteSpeed Cache to achieve high performance scores on mobile and desktop.",
+          "Harmonizing weather data structures from different providers into a single unified dashboard API.",
       },
     ],
     impact: [
-      "Delivered a premium digital agency web presence aligned with modern agency aesthetics",
-      "Enhanced lead capture efficiency with interactive contact and proposal forms",
-      "Empowered client independence through an intuitive WordPress content dashboard",
+      "Provides accessible, real-time meteorological insights",
+      "Interactive map overlays simplify climate pattern analysis",
+      "Fast global city search with instant forecast updates",
     ],
   },
   {
@@ -248,156 +144,66 @@ OPTIMIZATION & DEPLOYMENT LAYER (Vercel)
     icon: "🏝️",
     color: "#059669",
     gradient: "from-emerald-500 to-teal-700",
-    image: "/projects/trip2go.png",
-    title: "Trip2Go – Tourism & Excursion Booking Platform",
-    category: "Travel Platform",
+    image: "/projects/Trip2go.png",
+    title: "Trip2Go",
+    category: "Travel & Tourism",
     status: "Completed",
-    subtitle: "Tourism & Excursion Booking Platform",
-    card: "Comprehensive tourism booking platform featuring real-time excursion reservations, Stripe payment integration, interactive Google Maps, and user dashboards.",
-    githubUrl: "#",
+    subtitle: "Premium Travel & Excursion Booking Platform",
+    card: "A premium travel booking platform for Morocco featuring excursions, tours, destinations, booking management, and an elegant responsive UI.",
+    githubUrl: "https://github.com/ObaidDev-Ait",
     liveUrl: "#",
     techStack: [
       "Next.js",
-      "NestJS",
-      "PostgreSQL",
-      "Prisma ORM",
-      "Stripe",
-      "Google Maps API",
-      "Tailwind CSS",
-      "JWT",
-      "Docker",
-      "Vercel",
-    ],
-    features: [
-      "Booking Engine",
-      "Reservation System",
-      "Payments",
-      "Maps",
-      "Search",
-      "Dashboard",
-      "Customer Accounts",
-      "Excursions",
-    ],
-    summary:
-      "Trip2Go is an end-to-end tourism and excursion booking engine for travel experiences. Users can explore curated excursions, locate activities on Google Maps, complete Stripe checkout, and manage reservations via user dashboards.",
-    highlights: [
-      {
-        area: "Booking & Payments",
-        detail:
-          "Integrated Stripe webhooks and payment intents for real-time ticket checkout and order verification.",
-      },
-      {
-        area: "Geospatial Exploration",
-        detail:
-          "Embedded interactive Google Maps with custom markers for trip itineraries and pickup points.",
-      },
-      {
-        area: "Reservation Engine",
-        detail:
-          "Engineered date-slot availability tracking and customer reservation history management.",
-      },
-    ],
-    architecture: `CLIENT FRONTEND (Next.js)
-  Excursion Catalog · Interactive Google Maps · Booking Checkout UI
-─────────────────────────────────────────────
-BACKEND SERVICES (NestJS)
-  Booking Engine · Stripe Webhook Handler · Account Service
-─────────────────────────────────────────────
-PERSISTENCE (PostgreSQL + Prisma)
-  Reservation Schemas · Transactional Availability Checks`,
-    challenges: [
-      {
-        title: "Concurrent Availability Management",
-        detail:
-          "Preventing overbooking of limited excursion seats during simultaneous payment checkouts.",
-      },
-      {
-        title: "Stripe Payment State Reconciliation",
-        detail:
-          "Handling asynchronous payment webhooks reliably to transition booking statuses from pending to confirmed.",
-      },
-    ],
-    impact: [
-      "Automated complete customer reservation and payment flow",
-      "Enhanced booking conversion through interactive geolocation maps",
-      "Scalable infrastructure ready for high seasonal travel demand",
-    ],
-  },
-  {
-    slug: "atlasforecast",
-    icon: "🌍",
-    color: "#22d3ee",
-    gradient: "from-cyan-400 to-blue-500",
-    image: "/projects/atlasforecast.png",
-    title: "AtlasForecast – AI Weather & Satellite Analytics Platform",
-    category: "Weather Platform",
-    status: "Completed",
-    subtitle: "AI Weather & Satellite Analytics Platform",
-    card: "Satellite-enhanced weather analytics platform with interactive Leaflet maps, weather radar, NASA GIBS temporal imagery, Chart.js forecasting, and multi-API data fusion.",
-    githubUrl: "#",
-    liveUrl: "#",
-    techStack: [
-      "Next.js",
-      "React",
       "TypeScript",
       "Tailwind CSS",
-      "Leaflet",
-      "Chart.js",
-      "OpenWeather API",
-      "Meteoblue API",
-      "NASA GIBS API",
+      "Node.js",
+      "PostgreSQL",
+      "Prisma",
       "REST API",
-      "Vercel",
     ],
     features: [
-      "Weather Forecasts",
-      "Satellite Maps",
-      "Weather Radar",
-      "Interactive Charts",
-      "Alerts",
-      "Air Quality",
-      "Search Cities",
+      "Excursion Booking Engine",
+      "Morocco Destinations Showcase",
+      "Reservation Management",
+      "Interactive Maps",
+      "Customer Reviews",
+      "Responsive UI",
     ],
     summary:
-      "AtlasForecast is an advanced weather analytics platform uniting live weather radar, satellite layer visualizers, severe alert monitors, and Chart.js metrics across worldwide cities by orchestrating OpenWeather, Meteoblue, and NASA GIBS data feeds.",
+      "Trip2Go is a premium travel booking platform for Morocco featuring curated excursions, guided tours, interactive destination maps, reservation management, and an elegant responsive user interface.",
     highlights: [
       {
-        area: "Geospatial & Tiles",
+        area: "Booking Workflow",
         detail:
-          "Integrated Leaflet maps with custom NASA GIBS satellite tile layers and weather radar overlays.",
+          "Engineered end-to-end excursion reservation workflows and customer booking management.",
       },
       {
-        area: "Data Visualization",
+        area: "Relational Persistence",
         detail:
-          "Built interactive temperature, humidity, and barometric trends using responsive Chart.js components.",
+          "Structured PostgreSQL schemas with Prisma ORM for itineraries, slots, and bookings.",
       },
       {
-        area: "Multi-API Fusion",
+        area: "Responsive UI",
         detail:
-          "Fused multiple meteorological data sources with fallback handling and caching.",
+          "Designed a vibrant visual layout highlighting top Moroccan travel destinations.",
       },
     ],
-    architecture: `CLIENT (Next.js & React)
-  Leaflet Map Engine · NASA GIBS Tiles · Chart.js Analytics
-─────────────────────────────────────────────
-ORCHESTRATION & API LAYER
-  OpenWeather API · Meteoblue API · Response Normalizer`,
     challenges: [
       {
-        title: "Multi-Source Data Synchronization",
+        title: "Reservation State Validation",
         detail:
-          "Merging atmospheric data from different providers with distinct coordinate systems and update frequencies.",
+          "Preventing overbooking of tour slots during high-concurrency booking periods.",
       },
       {
-        title: "High-Performance GIS Layer Rendering",
+        title: "Mobile Filtering & Search",
         detail:
-          "Maintaining smooth map panning and temporal slider scrubbing while rendering high-resolution satellite tiles.",
+          "Structuring nested search filters for touchscreens with zero layout shifts.",
       },
     ],
     impact: [
-      "Provides accessible, satellite-grade meteorological insights to users",
-      "Interactive charts make complex climate patterns easy to analyze",
-      "Fast global city search with instant forecast updates",
+      "Streamlined excursion discovery and booking process",
+      "Elevated destination engagement through high-resolution showcases",
+      "Robust backend infrastructure built for high seasonal volume",
     ],
   },
   {
@@ -406,166 +212,327 @@ ORCHESTRATION & API LAYER
     color: "#f59e0b",
     gradient: "from-amber-400 to-red-500",
     image: "/projects/kechbus-ticket.png",
-    title: "KechBus Ticket – Smart Transportation & Digital Ticketing",
+    title: "KechBus Ticket",
     category: "Transportation",
     status: "Completed",
-    subtitle: "Smart Transportation & Digital Ticketing",
-    card: "Smart urban transportation and ticketing system with live GPS tracking via Socket.IO, digital QR tickets, route management, and driver/admin dashboards.",
-    githubUrl: "#",
+    subtitle: "Smart Bus Reservation & Ticketing System",
+    card: "Online bus ticket reservation system with real-time schedules, booking management, and route visualization.",
+    githubUrl: "https://github.com/ObaidDev-Ait",
     liveUrl: "#",
     techStack: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "NestJS",
+      "React.js",
       "Node.js",
+      "Express.js",
       "PostgreSQL",
-      "Prisma ORM",
-      "Google Maps API",
-      "Socket.IO",
-      "QR Code",
-      "JWT Authentication",
-      "Tailwind CSS",
-      "Docker",
+      "Leaflet",
       "REST API",
     ],
     features: [
-      "Online Ticket Booking",
-      "QR Tickets",
-      "Live Tracking",
-      "Route Management",
-      "Driver Dashboard",
-      "Notifications",
-      "Admin Dashboard",
+      "Online Bus Ticket Booking",
+      "Real-Time Route Maps & Schedules",
+      "Interactive Seat Selection",
+      "Reservation History",
+      "Admin Control Panel",
+      "RESTful API Backend",
     ],
     summary:
-      "KechBus Ticket is a modern transit digitizing platform for public and private bus routes. It features online ticket booking, tampered-proof QR validation, live GPS fleet tracking over WebSockets, and administrative control panels.",
+      "KechBus Ticket is an online bus ticket reservation system providing real-time bus schedules, interactive route stop maps with Leaflet, seat allocation, and full booking management.",
     highlights: [
       {
-        area: "Real-Time Fleet Tracking",
+        area: "Route Mapping",
         detail:
-          "Engineered WebSocket (Socket.IO) broadcast pipelines for real-time bus location updates on Google Maps.",
+          "Embedded interactive Leaflet maps displaying bus routes and scheduled stops.",
       },
       {
-        area: "Digital QR Ticketing",
+        area: "Seat Selection",
         detail:
-          "Generated tamper-proof QR codes verified by driver mobile dashboards.",
+          "Implemented interactive seat maps with real-time availability validation.",
       },
       {
-        area: "Route & Fleet Management",
+        area: "Backend Architecture",
         detail:
-          "Built administrative dashboards for route scheduling, seat capacity management, and analytics.",
+          "Developed Express.js REST APIs backed by PostgreSQL for transit scheduling.",
       },
     ],
-    architecture: `CLIENT & DRIVER DASHBOARD (React & Next.js)
-  Passenger Booking UI · Driver Scan App · Google Maps Tracking
-─────────────────────────────────────────────
-REAL-TIME BACKEND (NestJS + Socket.IO)
-  GPS Ingestion Engine · QR Verification · WebSocket Broadcaster
-─────────────────────────────────────────────
-PERSISTENCE (PostgreSQL + Prisma)
-  Bus Routes · Seat Inventory · Digital Ticket Ledger`,
     challenges: [
       {
-        title: "High-Frequency Location Updates",
+        title: "Seat Inventory Lockouts",
         detail:
-          "Optimizing WebSocket telemetry data fanout to handle hundreds of concurrent mobile map clients without server lag.",
+          "Ensuring temporary seat holds during online checkout to avoid double bookings.",
       },
       {
-        title: "QR Ticket Validation Security",
+        title: "Route Visualization",
         detail:
-          "Ensuring single-use verification logic for QR tickets to prevent double-boarding fraud.",
+          "Efficiently rendering complex bus route vectors on interactive mobile maps.",
       },
     ],
     impact: [
-      "Eliminates manual paper ticketing with secure QR validation",
-      "Improves commuter satisfaction through real-time transit tracking",
-      "Streamlines fleet operations for bus drivers and dispatchers",
+      "Replaced physical tickets with streamlined digital reservations",
+      "Improved transit transparency with real-time schedules",
+      "Centralized administrative control over routes and schedules",
     ],
   },
   {
-    slug: "ai-resume-builder",
-    icon: "📄",
+    slug: "contentflow",
+    icon: "⚡",
     color: "#a855f7",
     gradient: "from-purple-500 to-pink-600",
-    image: "/projects/ai-resume-builder.png",
-    title: "AI Resume Builder – AI Resume SaaS",
-    category: "AI SaaS",
+    image: "/projects/contentflow.png",
+    title: "ContentFlow",
+    category: "AI SaaS Platform",
     status: "Completed",
-    subtitle: "AI Resume SaaS Platform",
-    card: "AI-powered resume creation SaaS platform with automatic tailing, ATS score optimization, live PDF preview, streaming generation, Redis caching, and Stripe subscriptions.",
-    githubUrl: "#",
+    subtitle: "AI-Powered Content Publishing Platform",
+    card: "AI-powered content publishing platform allowing users to generate, organize, edit, and publish content efficiently through a modern dashboard.",
+    githubUrl: "https://github.com/ObaidDev-Ait",
     liveUrl: "#",
     techStack: [
       "Next.js",
       "React",
       "TypeScript",
-      "NestJS",
-      "Node.js",
-      "PostgreSQL",
       "Prisma ORM",
-      "OpenAI API",
-      "Redis",
-      "Stripe",
+      "SQLite",
       "Tailwind CSS",
-      "Puppeteer PDF",
-      "JWT Auth",
-      "Docker",
-      "Vercel",
+      "OpenAI API",
+      "Authentication",
     ],
     features: [
-      "AI Resume Generation",
-      "ATS Score Optimization",
-      "Live PDF Preview",
-      "Job Description Matching",
-      "Custom Templates",
-      "Subscription Plans",
-      "User Dashboard",
-      "Export PDF",
+      "AI Article & Copy Generation",
+      "Rich Text Editor",
+      "Content Organization & Tagging",
+      "Publishing Pipelines",
+      "User Authentication",
+      "Dashboard Analytics",
     ],
     summary:
-      "AI Resume Builder is a SaaS platform designed to craft ATS-friendly, highly targeted professional resumes in minutes using AI models. Features interactive prompt tailoring, real-time PDF previewing, and subscription management.",
+      "ContentFlow is an AI-powered content publishing SaaS platform that enables creators and teams to generate, organize, edit, and publish articles seamlessly using OpenAI models and Next.js.",
     highlights: [
       {
-        area: "AI Tailoring Engine",
+        area: "AI Generation Engine",
         detail:
-          "Built AI prompt pipelines matching resume bullet points against job description keywords for high ATS scoring.",
+          "Integrated OpenAI API prompt pipelines for generating blog posts and marketing copy.",
       },
       {
-        area: "Live Rendering Pipeline",
+        area: "Rich Editor & Dashboard",
         detail:
-          "Developed serverless Puppeteer HTML-to-PDF compilation with instant client preview.",
+          "Built a modern dashboard interface with rich text editing, draft saving, and taxonomy organization.",
       },
       {
-        area: "SaaS Monetization",
+        area: "Data & Authentication",
         detail:
-          "Implemented Stripe subscriptions with usage tier enforcement via Redis rate limiters.",
+          "Configured Prisma ORM with SQLite for fast data queries and secure user session management.",
       },
     ],
-    architecture: `FRONTEND DASHBOARD (Next.js & React)
-  Resume Studio · ATS Analyzer · Live PDF Preview Pane
-─────────────────────────────────────────────
-BACKEND API (NestJS + OpenAI + Redis)
-  AI Generation Pipeline · Redis Cache Guard · Puppeteer PDF Renderer
-─────────────────────────────────────────────
-PERSISTENCE LAYER (PostgreSQL + Prisma)
-  User Profiles · Resume Schemas · Subscription Ledger`,
+    highlightsTitle: "Platform Highlights",
     challenges: [
       {
-        title: "Real-Time PDF Compilation Latency",
+        title: "Streaming AI Generation",
         detail:
-          "Optimizing server-side Puppeteer PDF rendering to deliver sub-second preview updates during live editing.",
+          "Implementing streaming response handlers for instant content previews during AI generation.",
       },
       {
-        title: "ATS Keyword Extraction Accuracy",
+        title: "Content Taxonomy",
         detail:
-          "Fine-tuning prompt engineering to reliably extract hard skills and actionable verbs without content hallucination.",
+          "Structuring intuitive tag and category organization for large document libraries.",
       },
     ],
     impact: [
-      "Boosts job application callback rates by tailoring resumes directly to specific job descriptions",
-      "Sub-second live preview improves user editing satisfaction",
-      "Automated subscription management and secure token usage limits",
+      "Accelerates content creation workflows by up to 70%",
+      "Modern dashboard unifies drafting, editing, and publishing",
+      "Scalable architecture prepared for enterprise SaaS deployment",
+    ],
+  },
+  {
+    slug: "aquaflex",
+    icon: "💧",
+    color: "#0284c7",
+    gradient: "from-sky-500 to-blue-600",
+    image: "/projects/AQWAFLEX.png",
+    title: "AQWAFLEX",
+    category: "Corporate Website",
+    status: "Completed",
+    subtitle: "Premium Corporate & E-Commerce Platform",
+    card: "Professional corporate website showcasing premium products with responsive design, modern UI, and SEO optimization.",
+    githubUrl: "https://github.com/ObaidDev-Ait",
+    liveUrl: "#",
+    techStack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Framer Motion",
+    ],
+    features: [
+      "Premium Product Showcase",
+      "Interactive Product Catalog",
+      "Fluid Framer Motion Animations",
+      "Direct Inquiry Funnel",
+      "Full SEO Optimization",
+      "Responsive Layout",
+    ],
+    summary:
+      "AQWAFLEX is a professional corporate website showcasing premium bedding, foam, and mattress products. Built with Next.js, TypeScript, and Framer Motion, it delivers modern UI styling, responsive product galleries, and search engine optimization.",
+    highlights: [
+      {
+        area: "Modern UI/UX Design",
+        detail:
+          "Created a luxury corporate design tailored to brand identity with elegant typography.",
+      },
+      {
+        area: "Framer Motion",
+        detail:
+          "Designed smooth entrance animations and micro-interactions across pages.",
+      },
+      {
+        area: "SEO & Performance",
+        detail:
+          "Structured metadata, schema tags, and optimized assets for rapid loading.",
+      },
+    ],
+    challenges: [
+      {
+        title: "High-Resolution Asset Optimization",
+        detail:
+          "Optimizing product photography while retaining crisp quality and 60fps scroll performance.",
+      },
+      {
+        title: "Multi-Device Layout Balance",
+        detail:
+          "Balancing image aspect ratios for mobile screens without cropping essential product details.",
+      },
+    ],
+    impact: [
+      "Elevated brand authority for AQWAFLEX as a high-end manufacturer",
+      "Drove higher lead inquiries via responsive contact forms",
+      "Achieved fast page load times and strong SEO scores",
+    ],
+  },
+  {
+    slug: "solivra-agency",
+    icon: "🚀",
+    color: "#2563eb",
+    gradient: "from-blue-600 to-indigo-600",
+    image: "/projects/SOLIVRAAGENCY.png",
+    title: "SOLIVRA AGENCY",
+    category: "Digital Agency",
+    status: "Completed",
+    subtitle: "Digital Agency Platform",
+    card: "Business website for a digital agency presenting services, portfolio, contact forms, and optimized performance.",
+    githubUrl: "https://github.com/ObaidDev-Ait",
+    liveUrl: "#",
+    techStack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+    ],
+    features: [
+      "Services Showcase",
+      "Portfolio Showcase",
+      "Contact & Inquiry Forms",
+      "Performance Optimization",
+      "Clean UI/UX Layout",
+      "Mobile Responsive",
+    ],
+    summary:
+      "SOLIVRA AGENCY is a modern digital agency website designed to present agency services, showcase creative project portfolios, and capture prospective client leads with optimized web performance.",
+    highlights: [
+      {
+        area: "Agency Portfolio",
+        detail:
+          "Built interactive galleries to display past client work and digital deliverables.",
+      },
+      {
+        area: "Lead Capture",
+        detail:
+          "Designed intuitive contact forms and inquiry funnels for new client consultation.",
+      },
+      {
+        area: "Performance Optimization",
+        detail:
+          "Optimized static rendering and asset delivery for high Google Lighthouse scores.",
+      },
+    ],
+    challenges: [
+      {
+        title: "Responsive Grid Hierarchy",
+        detail:
+          "Formatting multi-column agency service offerings seamlessly across all mobile viewports.",
+      },
+      {
+        title: "Cross-Browser Consistency",
+        detail:
+          "Ensuring pixel-perfect CSS rendering across all modern web browsers.",
+      },
+    ],
+    impact: [
+      "Established strong digital agency brand presence",
+      "Boosted user engagement and client consultation inquiries",
+      "Delivered lightweight, high-speed static web pages",
+    ],
+  },
+  {
+    slug: "vacations-manager",
+    icon: "📅",
+    color: "#ec4899",
+    gradient: "from-pink-500 to-rose-600",
+    image: "/projects/vacations-manager.png",
+    title: "Vacations Manager",
+    category: "Business Management",
+    status: "Completed",
+    subtitle: "Corporate Vacation & Leave Management System",
+    card: "Vacation and leave management application for companies with employee requests, approvals, calendars, and administration dashboard.",
+    githubUrl: "https://github.com/ObaidDev-Ait",
+    liveUrl: "#",
+    techStack: [
+      "React.js",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+    ],
+    features: [
+      "Employee Leave Requests",
+      "Manager Approval Workflows",
+      "Team Availability Calendar",
+      "Employee Profiles",
+      "Administration Dashboard",
+      "Leave Status Tracking",
+    ],
+    summary:
+      "Vacations Manager is an internal business application for streamlining company leave requests. Employees can submit vacation applications while managers review, approve, and track team availability via central dashboards.",
+    highlights: [
+      {
+        area: "Approval Workflows",
+        detail:
+          "Built automated leave request submission and multi-tier approval tracking.",
+      },
+      {
+        area: "Interactive Calendar",
+        detail:
+          "Designed department availability calendars to prevent scheduling conflicts.",
+      },
+      {
+        area: "Relational Schema",
+        detail:
+          "Structured normalized PostgreSQL databases for employee accounts, balances, and request logs.",
+      },
+    ],
+    challenges: [
+      {
+        title: "Date Overlap Validation",
+        detail:
+          "Implementing algorithmic validation to detect overlapping time-off requests within departments.",
+      },
+      {
+        title: "Role-Based Access Control",
+        detail:
+          "Restricting view rights so employees only access appropriate team data.",
+      },
+    ],
+    impact: [
+      "Replaced manual leave management with automated digital tracking",
+      "Prevented departmental understaffing via visual calendars",
+      "Provided HR administration with downloadable leave history reports",
     ],
   },
 ];

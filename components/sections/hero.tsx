@@ -138,8 +138,10 @@ export function Hero() {
                 </svg>
               </a>
               <a
-                href="/obaid.cv.png"
-                download="Obaid_Ait_Mattou_CV.png"
+                href="/cv/Obaid_Ait_Mattou_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Obaid_Ait_Mattou_CV.pdf"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-sm text-foreground bg-[var(--btn-bg)] border border-[var(--btn-border)] hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)] hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm"
               >
                 Download CV

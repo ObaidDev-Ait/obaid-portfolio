@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import type { Project } from "@/lib/data";
 
 interface Props {
@@ -112,9 +113,12 @@ export function ProjectCaseStudy({ project }: Props) {
               style={{ boxShadow: `0 20px 50px ${project.color}10` }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 opacity-50 group-hover/img:opacity-30 transition-opacity duration-300 pointer-events-none" />
-              <img
+              <Image
                 src={project.image}
                 alt={`${project.title} Interface`}
+                fill
+                priority
+                sizes="(max-width: 1200px) 100vw, 1200px"
                 className="w-full h-full object-cover object-top transition-transform duration-700 group-hover/img:scale-[1.02]"
               />
             </motion.div>

@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/lib/data";
 
@@ -64,13 +65,15 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         {/* Project Cover Image */}
         {project.image && (
-          <div className="relative w-full h-44 mb-5 rounded-xl overflow-hidden bg-black/5 dark:bg-white/5 border border-white/10 group-hover:shadow-md transition-all">
-            <img
+          <div className="relative w-full h-48 mb-5 rounded-xl overflow-hidden bg-black/5 dark:bg-white/5 border border-white/10 group-hover:shadow-md transition-all">
+            <Image
               src={project.image}
               alt={project.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity z-10 pointer-events-none" />
           </div>
         )}
 
