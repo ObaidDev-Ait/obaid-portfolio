@@ -16,12 +16,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
 
+  const isSolivraOS = slug === "solivra-os";
+  const title = isSolivraOS
+    ? "Solivra OS — Enterprise ERP & AI Platform"
+    : project.title;
+  const description = isSolivraOS
+    ? "Solivra OS is a full-stack enterprise ERP platform combining CRM, finance, operations, HR, RBAC and AI-powered automation."
+    : project.card;
+
   return {
-    title: project.title,
-    description: project.card,
+    title,
+    description,
     openGraph: {
-      title: `${project.title} — Obaid`,
-      description: project.card,
+      title: `${title} — Obaid`,
+      description,
     },
   };
 }

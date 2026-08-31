@@ -1,51 +1,49 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { NoiseOverlay } from "@/components/effects/noise-overlay";
-import { Preloader } from "@/components/layout/preloader";
-import { AuroraBackground } from "@/components/effects/aurora-background";
-import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+import { LanguageProvider } from "@/context/language-context";
 
-const inter = Inter({
-  variable: "--font-inter",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Obaid — Full-Stack Software Developer",
-    template: "%s | Obaid",
+    default: "Obaid Ait Mattou — Full Stack Software Engineer",
+    template: "%s | Obaid Ait Mattou",
   },
   description:
-    "Software Developer passionate about building secure, scalable, and high-performance applications. Experienced in full-stack development, API design, database management, and modern web technologies.",
+    "Full Stack Software Engineer building modern web applications, scalable backend systems, and responsive digital products with React, Next.js, TypeScript, and Node.js.",
   keywords: [
-    "Full Stack Developer",
-    "Software Developer",
-    "React",
-    "Next.js",
-    "Node.js",
+    "Obaid Ait Mattou",
+    "Full Stack Software Engineer",
+    "Software Engineer",
+    "React Developer",
+    "Next.js Developer",
     "TypeScript",
-    "Nest.js",
+    "Node.js",
+    "NestJS",
     "PostgreSQL",
     "REST APIs",
-    "Portfolio",
-    "Software Engineer",
+    "Software Architecture",
   ],
-  authors: [{ name: "Obaid" }],
+  authors: [{ name: "Obaid Ait Mattou" }],
   openGraph: {
-    title: "Obaid — Full-Stack Software Developer",
+    title: "Obaid Ait Mattou — Full Stack Software Engineer",
     description:
-      "Software Developer passionate about building secure, scalable, and high-performance applications. Explore my engineering case studies.",
+      "Full Stack Software Engineer building modern web applications with React, Next.js, TypeScript, and Node.js. View case studies and technical highlights.",
     type: "website",
     locale: "en_US",
   },
@@ -59,7 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -80,19 +78,17 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col">
-        <Preloader />
-        <div className="fixed inset-0 z-0 pointer-events-none">
-          <AuroraBackground />
-        </div>
-        <SmoothScroll>
-          <NoiseOverlay />
-          <Navbar />
-          <main className="flex-1 relative z-10">{children}</main>
-          <Footer />
-          <WhatsAppButton />
-        </SmoothScroll>
+      <body className="min-h-screen flex flex-col bg-background text-foreground selection:bg-accent/15 selection:text-foreground">
+        <LanguageProvider>
+          <SmoothScroll>
+            <NoiseOverlay />
+            <Navbar />
+            <main className="flex-1 relative z-10">{children}</main>
+            <Footer />
+          </SmoothScroll>
+        </LanguageProvider>
       </body>
     </html>
   );
 }
+

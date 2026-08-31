@@ -153,11 +153,12 @@ const OrbitRing = ({ radius, speed, reverse = false, icons }: OrbitRingProps) =>
               {/* Technology Planet Pod */}
               <div
                 className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center bg-[#0d121f]/90 border border-slate-700/40 backdrop-blur-md transition-all duration-300 hover:scale-125 hover:border-slate-500/70 hover:shadow-[0_0_20px_var(--glow)] cursor-pointer group"
-                style={{
-                  // Set local css variable for glow color
-                  ["--glow" as any]: tech.glowColor,
-                  boxShadow: `0 0 12px ${tech.glowColor}20, inset 0 0 8px ${tech.glowColor}10`,
-                }}
+                style={
+                  {
+                    "--glow": tech.glowColor,
+                    boxShadow: `0 0 12px ${tech.glowColor}20, inset 0 0 8px ${tech.glowColor}10`,
+                  } as React.CSSProperties
+                }
                 title={tech.name}
               >
                 <div className="w-5.5 h-5.5 sm:w-6 sm:h-6 flex items-center justify-center opacity-85 group-hover:opacity-100 transition-opacity duration-300">
@@ -207,6 +208,7 @@ export function OrbitingAvatar() {
               src="/avatar.jpg"
               alt="Obaid Ait Mattou Profile Picture"
               className="w-full h-full object-cover"
+              loading="lazy"
             />
             
             {/* Subtle inner overlay overlay shadow */}

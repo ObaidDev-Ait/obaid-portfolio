@@ -1,53 +1,45 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { personalInfo } from "@/lib/data";
+import { useLanguage } from "@/context/language-context";
 
 export function Footer() {
+  const { t } = useLanguage();
+
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <motion.footer
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="border-t border-black/[0.05] dark:border-white/[0.05] py-16 bg-transparent"
-    >
+    <footer className="border-t border-border py-14 bg-background">
       <div className="mx-auto max-w-6xl px-6">
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 mb-12">
-          {/* Column 1: Brand initials & Tagline */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-border">
+          {/* Identity & Mission */}
           <div className="md:col-span-5 flex flex-col items-start">
-            {/* OAM Glowing Badge */}
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center font-black text-white shadow-[0_0_25px_rgba(79,140,255,0.4)] text-base tracking-wider mb-5 uppercase select-none">
-              OAM
-            </div>
-            
-            <p className="text-sm text-muted-foreground max-w-xs leading-relaxed mb-6">
-              Building intelligent, production-grade systems that scale.
+            <span className="font-semibold text-base tracking-tight text-foreground mb-2">
+              {t.hero.name}
+            </span>
+            <p className="text-sm text-muted max-w-sm leading-relaxed mb-6">
+              {t.footer.tagline}
             </p>
 
-            {/* Social Links Pods */}
             <div className="flex items-center gap-3">
               <a
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[var(--btn-bg)] border border-[var(--btn-border)] hover:border-[var(--btn-border-hover)] hover:bg-[var(--btn-bg-hover)] flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-200"
+                className="p-2 rounded-md border border-border bg-[var(--btn-bg)] hover:bg-[var(--btn-bg-hover)] text-muted hover:text-foreground transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0h.003z" />
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
               </a>
               <a
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[var(--btn-bg)] border border-[var(--btn-border)] hover:border-[var(--btn-border-hover)] hover:bg-[var(--btn-bg-hover)] flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-200"
+                className="p-2 rounded-md border border-border bg-[var(--btn-bg)] hover:bg-[var(--btn-bg-hover)] text-muted hover:text-foreground transition-colors"
                 aria-label="GitHub"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -56,35 +48,35 @@ export function Footer() {
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="w-9 h-9 rounded-full bg-[var(--btn-bg)] border border-[var(--btn-border)] hover:border-[var(--btn-border-hover)] hover:bg-[var(--btn-bg-hover)] flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-200"
+                className="p-2 rounded-md border border-border bg-[var(--btn-bg)] hover:bg-[var(--btn-bg-hover)] text-muted hover:text-foreground transition-colors"
                 aria-label="Email"
               >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="4" width="20" height="16" rx="2" />
-                  <path d="M22 4l-10 8L2 4" />
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M22 4l-10 8L2 4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
             </div>
           </div>
 
-          {/* Column 2: Navigation Links */}
+          {/* Navigation Links */}
           <div className="md:col-span-3 flex flex-col">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-foreground mb-5 pb-2 border-b border-black/[0.05] dark:border-white/[0.05]">
-              Navigation
-            </h4>
-            <ul className="space-y-3">
+            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground mb-4">
+              {t.footer.quickLinks}
+            </span>
+            <ul className="space-y-2.5 text-sm">
               {[
-                { label: "Home", href: "/#hero" },
-                { label: "Skills", href: "/#skills" },
-                { label: "Projects", href: "/#projects" },
-                { label: "Contact", href: "/#contact" },
+                { label: t.nav.about, href: "/#about" },
+                { label: t.nav.skills, href: "/#skills" },
+                { label: t.nav.projects, href: "/#projects" },
+                { label: t.nav.experience, href: "/#experience" },
+                { label: t.nav.contact, href: "/#contact" },
               ].map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="group flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                    className="text-muted hover:text-foreground transition-colors"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent-blue/30 group-hover:bg-accent-blue group-hover:scale-125 transition-all duration-200" />
                     {link.label}
                   </a>
                 </li>
@@ -92,73 +84,60 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Contact details */}
+          {/* Direct Actions & Resume */}
           <div className="md:col-span-4 flex flex-col">
-            <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-foreground mb-5 pb-2 border-b border-black/[0.05] dark:border-white/[0.05]">
-              Contact
-            </h4>
-            <ul className="space-y-3.5">
+            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground mb-4">
+              {t.footer.connect}
+            </span>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <a
+                  href="/cv/Obaid_Ait_Mattou_CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Obaid_Ait_Mattou_CV.pdf"
+                  className="text-muted hover:text-foreground inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <span>{t.nav.downloadCv}</span>
+                  <svg className="w-3.5 h-3.5 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" strokeLinecap="round" strokeLinejoin="round" />
+                    <polyline points="7 10 12 15 17 10" strokeLinecap="round" strokeLinejoin="round" />
+                    <line x1="12" y1="15" x2="12" y2="3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </li>
               <li>
                 <a
                   href={`mailto:${personalInfo.email}`}
-                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  className="text-muted hover:text-foreground transition-colors"
                 >
-                  <svg className="w-4 h-4 text-accent-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M22 4l-10 8L2 4" />
-                  </svg>
                   {personalInfo.email}
                 </a>
               </li>
-              <li>
-                <a
-                  href={`tel:${personalInfo.phone}`}
-                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
-                >
-                  <svg className="w-4 h-4 text-accent-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                  {personalInfo.phone}
-                </a>
-              </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground select-none">
-                <svg className="w-4 h-4 text-accent-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                Agadir & Marrakech, Morocco
+              <li className="text-muted font-mono text-xs pt-1">
+                {t.contact.locationValue}
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom copyright & policy bar */}
-        <div className="border-t border-black/[0.05] dark:border-white/[0.05] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground text-center sm:text-left">
-            &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-muted font-mono">
+            &copy; {new Date().getFullYear()} {t.hero.name}. {t.footer.rights}
           </p>
 
-          <div className="flex items-center gap-6">
-            <a
-              href="/#hero"
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              Privacy Policy
-            </a>
-
-            {/* Back to top circular button */}
-            <button
-              onClick={handleScrollToTop}
-              className="w-8 h-8 rounded-full bg-[var(--btn-bg)] border border-[var(--btn-border)] hover:bg-[var(--btn-bg-hover)] hover:border-[var(--btn-border-hover)] flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-300"
-              aria-label="Back to top"
-            >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="18 15 12 9 6 15" />
-              </svg>
-            </button>
-          </div>
+          <button
+            onClick={handleScrollToTop}
+            className="inline-flex items-center gap-1 text-xs font-mono text-muted hover:text-foreground transition-colors"
+            aria-label="Back to top"
+          >
+            <span>Top</span>
+            <span>↑</span>
+          </button>
         </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 }
+

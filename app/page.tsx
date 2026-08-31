@@ -1,16 +1,20 @@
 import { Hero } from "@/components/sections/hero";
-import { Projects } from "@/components/sections/projects";
-import { Stats } from "@/components/sections/stats";
+import { About } from "@/components/sections/about";
 import { Skills } from "@/components/sections/skills";
+import { Projects } from "@/components/sections/projects";
+import { Experience } from "@/components/sections/experience";
+import { Stats } from "@/components/sections/stats";
 import { Contact } from "@/components/sections/contact";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Projects />
-      <Stats />
+      <About />
       <Skills />
+      <Projects />
+      <Experience />
+      <Stats />
       <Contact />
     </>
   );

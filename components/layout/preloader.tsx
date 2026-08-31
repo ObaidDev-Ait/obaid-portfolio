@@ -4,19 +4,19 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Preloader() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    if (typeof window !== "undefined") {
+      return !sessionStorage.getItem("portfolio-loaded");
+    }
+    return false;
+  });
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Check if the preloader has already run in this session
-    const hasLoaded = sessionStorage.getItem("portfolio-loaded");
-    if (hasLoaded) {
-      setLoading(false);
-      return;
-    }
+    if (!loading) return;
 
     // Simulate page assets loading progress
-    const duration = 1500; // 1.5s total loading time
+    const duration = 1200; // 1.2s total loading time
     const intervalTime = 30;
     const steps = duration / intervalTime;
     const increment = 100 / steps;

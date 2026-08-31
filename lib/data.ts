@@ -70,6 +70,83 @@ export const personalInfo: PersonalInfo = {
 // ── Projects ─────────────────────────────────────────────────
 export const projects: Project[] = [
   {
+    slug: "solivra-os",
+    icon: "⚡",
+    color: "#6366f1",
+    gradient: "from-indigo-500 to-purple-600",
+    image: "/projects/solivra-os.png",
+    title: "Solivra OS",
+    category: "Enterprise ERP",
+    status: "Completed",
+    subtitle: "Enterprise ERP · CRM · AI Operations Platform",
+    card: "Enterprise ERP platform centralizing CRM, sales, finance, projects, HR, reporting, administration and AI-powered automation.",
+    githubUrl: "https://github.com/ObaidDev-Ait",
+    liveUrl: "#",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "NestJS",
+      "PostgreSQL",
+      "Prisma",
+      "Gemini AI",
+      "RBAC",
+      "Docker",
+    ],
+    features: [
+      "Dashboard",
+      "CRM & Leads",
+      "Sales & Finance",
+      "Invoices & Expenses",
+      "Projects & Tasks",
+      "HR & Payroll",
+      "Reports & Analytics",
+      "Knowledge Base",
+      "AI Gateway & Agents",
+      "RBAC & Team Management",
+      "Audit Logs",
+      "Client Portal",
+    ],
+    summary:
+      "Solivra OS is a full-stack enterprise ERP platform designed to centralize business operations including CRM, Sales, Finance, Projects, HR, Knowledge Base, Reporting, Administration, RBAC, and AI-powered automation. Built with a decoupled frontend/backend monorepo architecture for real multi-tenant enterprise scale.",
+    highlights: [
+      {
+        area: "Monorepo Architecture",
+        detail:
+          "Decoupled Turborepo setup featuring Next.js frontend apps, NestJS REST API backend, and PostgreSQL database managed with Prisma ORM.",
+      },
+      {
+        area: "Enterprise Security & RBAC",
+        detail:
+          "Strict multi-tenant data isolation, fine-grained server-side RBAC, HttpOnly session authentication, refresh token rotation, IDOR defense, and audit logging.",
+      },
+      {
+        area: "Real AI Gateway & Agents",
+        detail:
+          "Direct Google Gemini AI integration executing autonomous AI agents over contextual enterprise business data.",
+      },
+      {
+        area: "Financial Engine",
+        detail:
+          "Complete billing workflow handling quotes, invoices, VAT calculation, partial payments, full settlement, expenses, and automated reconciliation.",
+      },
+    ],
+    challenges: [
+      {
+        title: "Multi-Tenant Enterprise Architecture",
+        detail:
+          "Designing a secure multi-tenant ERP architecture combining CRM, finance, operations, HR, RBAC and real AI automation while maintaining strong performance and data isolation.",
+      },
+    ],
+    impact: [
+      "Passed 1,481 / 1,481 enterprise QA assertions with 0 critical security issues and 0 cross-tenant data leaks.",
+      "Achieved 30/30 Next.js routes compiled with 0 TypeScript errors and Lighthouse >= 92 performance.",
+      "Synchronized 1,362 i18n keys across English, French, and Arabic with native RTL layout support.",
+      "Achieved a verified Product Acceptance score of 9.91 / 10.",
+    ],
+  },
+  {
     slug: "atlasforecast",
     icon: "🌍",
     color: "#22d3ee",
@@ -408,22 +485,23 @@ export const projects: Project[] = [
   },
   {
     slug: "solivra-agency",
-    icon: "🚀",
+    icon: "🌐",
     color: "#2563eb",
     gradient: "from-blue-600 to-indigo-600",
     image: "/projects/solivra-agency.png",
     title: "SOLIVRA AGENCY",
-    category: "Digital Agency",
+    category: "WordPress Website",
     status: "Completed",
-    subtitle: "Digital Agency Platform",
-    card: "Business website for a digital agency presenting services, portfolio, contact forms, and optimized performance.",
+    subtitle: "Agency Website & Portfolio Platform",
+    card: "Business website for a digital agency presenting services, portfolio galleries, client inquiry forms, and performance optimization.",
     githubUrl: "https://github.com/ObaidDev-Ait",
     liveUrl: "#",
     techStack: [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "TypeScript",
+      "WordPress",
+      "Elementor",
+      "PHP",
+      "CSS",
+      "JavaScript",
     ],
     features: [
       "Services Showcase",
@@ -434,40 +512,40 @@ export const projects: Project[] = [
       "Mobile Responsive",
     ],
     summary:
-      "SOLIVRA AGENCY is a modern digital agency website designed to present agency services, showcase creative project portfolios, and capture prospective client leads with optimized web performance.",
+      "SOLIVRA AGENCY is a modern agency website built on WordPress with Elementor, custom PHP, and bespoke CSS. It was engineered to present digital services, showcase past client work, and capture qualified consultation leads with optimized load performance.",
     highlights: [
       {
-        area: "Agency Portfolio",
+        area: "Custom Theme Styling",
         detail:
-          "Built interactive galleries to display past client work and digital deliverables.",
+          "Authored custom CSS and PHP templates extending Elementor's capabilities for bespoke typography and layouts.",
       },
       {
-        area: "Lead Capture",
+        area: "Lead Capture & Funnels",
         detail:
-          "Designed intuitive contact forms and inquiry funnels for new client consultation.",
+          "Configured optimized contact and inquiry workflows to connect prospects directly with the agency team.",
       },
       {
-        area: "Performance Optimization",
+        area: "Asset Optimization",
         detail:
-          "Optimized static rendering and asset delivery for high Google Lighthouse scores.",
+          "Tuned caching, asset delivery, and responsive images to ensure rapid page load times.",
       },
     ],
     challenges: [
       {
-        title: "Responsive Grid Hierarchy",
+        title: "Dynamic Grid Adaptability",
         detail:
-          "Formatting multi-column agency service offerings seamlessly across all mobile viewports.",
+          "Ensuring multi-column agency portfolios render cleanly across various smartphone viewports without layout breaking.",
       },
       {
-        title: "Cross-Browser Consistency",
+        title: "Performance on WordPress Core",
         detail:
-          "Ensuring pixel-perfect CSS rendering across all modern web browsers.",
+          "Minimizing plugin overhead to maintain fast first-contentful-paint metrics.",
       },
     ],
     impact: [
-      "Established strong digital agency brand presence",
-      "Boosted user engagement and client consultation inquiries",
-      "Delivered lightweight, high-speed static web pages",
+      "Established an authoritative digital presence for the agency",
+      "Improved consultation inquiry submissions through streamlined contact funnels",
+      "Delivered a reliable, easy-to-manage content management experience for the client",
     ],
   },
   {
@@ -537,58 +615,73 @@ export const projects: Project[] = [
   },
 ];
 
+// ── Experience ────────────────────────────────────────────────
+export interface ExperienceItem {
+  period: string;
+  role: string;
+  type: string;
+  description: string;
+  responsibilities: string[];
+  skills: string[];
+}
 
-// ── Skills ───────────────────────────────────────────────────
-export const skills: SkillCategory[] = [
+export const experiences: ExperienceItem[] = [
   {
-    category: "Frontend",
-    icon: "⚡",
-    items: [
-      "React",
-      "Next.js",
-      "JavaScript",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "PWA",
+    period: "2024 — Present",
+    role: "Full Stack Software Developer",
+    type: "Freelance / Independent",
+    description:
+      "Designing and delivering custom full-stack web applications, REST APIs, and CMS platforms for diverse clients and business owners.",
+    responsibilities: [
+      "Architected and built full-stack solutions using Next.js, React, Node.js, Express, and PostgreSQL",
+      "Integrated third-party APIs (OpenWeather, Leaflet, OpenAI, payment gateways, and custom REST services)",
+      "Implemented relational database schemas, migrations, and ORM layer integrations using Prisma and Supabase",
+      "Built bespoke WordPress and WooCommerce platforms for business clients requiring flexible content management",
+      "Handled production deployments, performance tuning, and ongoing client maintenance",
     ],
+    skills: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "REST APIs", "WordPress"],
   },
   {
-    category: "Backend",
-    icon: "🔧",
-    items: [
-      "Node.js",
-      "Nest.js",
-      "Express",
-      "REST APIs",
-      "JWT Auth",
-      "RBAC",
-      "WebSocket",
+    period: "2023 — 2024",
+    role: "Frontend & Web Developer",
+    type: "Freelance & Projects",
+    description:
+      "Focused on engineering responsive web user interfaces, component systems, and client website migrations.",
+    responsibilities: [
+      "Developed high-fidelity, responsive user interfaces using modern CSS, Tailwind, and React",
+      "Collaborated directly with clients to translate business requirements into technical specs and interactive features",
+      "Optimized Core Web Vitals, asset compression, and mobile navigation layouts for production websites",
     ],
+    skills: ["JavaScript", "React", "HTML5", "CSS3", "Tailwind CSS", "Git"],
+  },
+];
+
+// ── Categorized Skills ────────────────────────────────────────
+export interface CategorizedSkillGroup {
+  name: string;
+  skills: string[];
+}
+
+export const categorizedSkills: CategorizedSkillGroup[] = [
+  {
+    name: "Frontend",
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML5 / CSS3"],
   },
   {
-    category: "Databases & Storage",
-    icon: "🗄️",
-    items: [
-      "PostgreSQL",
-      "MySQL",
-      "SQL",
-      "Supabase",
-      "IndexedDB",
-      "Caching (TTL)",
-    ],
+    name: "Backend",
+    skills: ["Node.js", "NestJS", "Express", "REST APIs", "JWT Auth", "WebSocket"],
   },
   {
-    category: "DevOps & Tools",
-    icon: "🚀",
-    items: [
-      "Git & GitHub",
-      "Vercel",
-      "Service Workers",
-      "CI/CD",
-      "Lighthouse",
-      "Performance Tuning",
-    ],
+    name: "Database & Storage",
+    skills: ["PostgreSQL", "MySQL", "Supabase", "Prisma ORM", "SQLite"],
+  },
+  {
+    name: "CMS",
+    skills: ["WordPress", "Elementor", "WooCommerce", "PHP"],
+  },
+  {
+    name: "Tools & DevOps",
+    skills: ["Git", "GitHub", "Docker", "Vercel", "Firebase", "Figma"],
   },
 ];
 

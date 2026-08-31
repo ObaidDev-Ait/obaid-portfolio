@@ -12,16 +12,6 @@ interface TextRevealProps {
   staggerDelay?: number;
 }
 
-const containerVariants: Variants = {
-  hidden: {},
-  visible: (delay: number) => ({
-    transition: {
-      delayChildren: delay,
-      staggerChildren: 0.05,
-    },
-  }),
-};
-
 const wordVariants: Variants = {
   hidden: {
     y: "100%",

@@ -3,6 +3,7 @@
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { useRef, useEffect } from "react";
 import { stats } from "@/lib/data";
+import { useLanguage } from "@/context/language-context";
 
 function AnimatedCounter({
   value,
@@ -19,7 +20,7 @@ function AnimatedCounter({
   useEffect(() => {
     if (inView) {
       animate(count, value, {
-        duration: 2,
+        duration: 1.5,
         ease: [0.16, 1, 0.3, 1],
       });
     }
@@ -35,36 +36,34 @@ function AnimatedCounter({
 export function Stats() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const { t } = useLanguage();
+
+  const labelMap: Record<string, string> = {
+    "Production Systems": t.stats.productionSystems,
+    "APIs Integrated": t.stats.apisIntegrated,
+    "RBAC Tiers": t.stats.rbacTiers,
+    "Offline-Ready": t.stats.offlineReady,
+  };
 
   return (
-    <div ref={ref} className="mx-auto max-w-6xl px-6 py-8">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 border-t border-b border-black/[0.06]"
-      >
-        {stats.map((stat, i) => (
-          <motion.div
-            key={stat.label}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="text-center"
-          >
-            <div className="text-3xl sm:text-4xl font-extrabold tracking-tighter gradient-text">
+    <div ref={ref} className="mx-auto max-w-6xl px-6 py-6 border-b border-border">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-4">
+        {stats.map((stat) => (
+          <div key={stat.label} className="text-left rtl:text-right sm:text-center">
+            <div className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground font-mono">
               <AnimatedCounter
                 value={stat.value}
                 suffix={stat.suffix}
                 inView={isInView}
               />
             </div>
-            <div className="text-sm text-muted-foreground mt-1 font-medium">
-              {stat.label}
+            <div className="text-xs text-muted mt-1 font-mono uppercase tracking-wider">
+              {labelMap[stat.label] || stat.label}
             </div>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }
+
