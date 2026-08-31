@@ -1152,7 +1152,7 @@ export const translations: Record<Language, Translations> = {
     hero: {
       badge: "متاح لمشاريع وفرص عمل جديدة",
       greeting: "مرحباً، أنا",
-      name: "عبيد أيت ماتو",
+      name: "عبيد أيت ماطو",
       title: "مطور برمجيات متكامل (Full-Stack)",
       tagline: "مطور برمجيات شغوف ببناء تطبيقات آمنة، قابلة للتطوير وعالية الأداء.",
       summary:
