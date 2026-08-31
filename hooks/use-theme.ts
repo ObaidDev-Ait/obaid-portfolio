@@ -1,44 +1,41 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore, useCallback } from "react";
 
 export type Theme = "light" | "dark";
 
+function subscribeTheme(callback: () => void) {
+  window.addEventListener("storage", callback);
+  window.addEventListener("theme-change", callback);
+  return () => {
+    window.removeEventListener("storage", callback);
+    window.removeEventListener("theme-change", callback);
+  };
+}
+
+function getThemeSnapshot(): Theme {
+  if (typeof document !== "undefined") {
+    return document.documentElement.classList.contains("dark") ? "dark" : "light";
+  }
+  return "light";
+}
+
+function getThemeServerSnapshot(): Theme {
+  return "light";
+}
+
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window !== "undefined") {
-      try {
-        const saved = localStorage.getItem("theme") as Theme | null;
-        if (saved === "dark" || saved === "light") {
-          return saved;
-        }
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
-        }
-      } catch (e) {
-        console.warn("[useTheme] Failed to read theme from localStorage:", e);
-      }
-    }
-    return "light";
-  });
+  const theme = useSyncExternalStore(
+    subscribeTheme,
+    getThemeSnapshot,
+    getThemeServerSnapshot
+  );
 
-  useEffect(() => {
-    // Listen to changes from other toggles
-    const handleThemeChange = (e: Event) => {
-      const customEvent = e as CustomEvent<Theme>;
-      setTheme(customEvent.detail);
-    };
-
-    window.addEventListener("theme-change", handleThemeChange);
-    return () => window.removeEventListener("theme-change", handleThemeChange);
-  }, []);
-
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     // Disable transitions temporarily to prevent lag on mobile rendering
     document.documentElement.classList.add("disable-transitions");
 
     const newTheme: Theme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
 
     try {
       localStorage.setItem("theme", newTheme);
@@ -52,7 +49,7 @@ export function useTheme() {
       document.documentElement.classList.remove("dark");
     }
 
-    // Dispatch global event so all toggle buttons update their state
+    // Dispatch global event so all toggle buttons and useSyncExternalStore update
     window.dispatchEvent(new CustomEvent("theme-change", { detail: newTheme }));
 
     // Re-enable transitions in the next animation frames
@@ -61,7 +58,7 @@ export function useTheme() {
         document.documentElement.classList.remove("disable-transitions");
       });
     });
-  };
+  }, [theme]);
 
   return { theme, toggleTheme };
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useSyncExternalStore, useCallback } from "react";
 import { Language, Translations, translations } from "@/lib/translations";
 
 interface LanguageContextType {
@@ -12,23 +12,42 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>(() => {
-    if (typeof window !== "undefined") {
-      const savedLang = localStorage.getItem("portfolio_lang") as Language | null;
-      if (savedLang && (savedLang === "en" || savedLang === "fr" || savedLang === "ar")) {
-        return savedLang;
-      }
-    }
-    return "en";
-  });
+function subscribeLanguage(callback: () => void) {
+  window.addEventListener("storage", callback);
+  window.addEventListener("language-change", callback);
+  return () => {
+    window.removeEventListener("storage", callback);
+    window.removeEventListener("language-change", callback);
+  };
+}
 
-  const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
+function getLanguageSnapshot(): Language {
+  if (typeof window !== "undefined") {
+    const savedLang = localStorage.getItem("portfolio_lang") as Language | null;
+    if (savedLang && (savedLang === "en" || savedLang === "fr" || savedLang === "ar")) {
+      return savedLang;
+    }
+  }
+  return "en";
+}
+
+function getLanguageServerSnapshot(): Language {
+  return "en";
+}
+
+export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const language = useSyncExternalStore(
+    subscribeLanguage,
+    getLanguageSnapshot,
+    getLanguageServerSnapshot
+  );
+
+  const setLanguage = useCallback((lang: Language) => {
     if (typeof window !== "undefined") {
       localStorage.setItem("portfolio_lang", lang);
+      window.dispatchEvent(new CustomEvent("language-change", { detail: lang }));
     }
-  };
+  }, []);
 
   const dir: "ltr" | "rtl" = language === "ar" ? "rtl" : "ltr";
 

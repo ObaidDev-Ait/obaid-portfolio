@@ -1,19 +1,42 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+function subscribePreloader(callback: () => void) {
+  window.addEventListener("storage", callback);
+  window.addEventListener("preloader-change", callback);
+  return () => {
+    window.removeEventListener("storage", callback);
+    window.removeEventListener("preloader-change", callback);
+  };
+}
+
+function getPreloaderSnapshot(): boolean {
+  if (typeof window !== "undefined") {
+    return !sessionStorage.getItem("portfolio-loaded");
+  }
+  return false;
+}
+
+function getPreloaderServerSnapshot(): boolean {
+  return false;
+}
+
 export function Preloader() {
-  const [loading, setLoading] = useState(() => {
-    if (typeof window !== "undefined") {
-      return !sessionStorage.getItem("portfolio-loaded");
-    }
-    return false;
-  });
+  const isInitiallyLoading = useSyncExternalStore(
+    subscribePreloader,
+    getPreloaderSnapshot,
+    getPreloaderServerSnapshot
+  );
+
+  const [completed, setCompleted] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  const active = isInitiallyLoading && !completed;
+
   useEffect(() => {
-    if (!loading) return;
+    if (!active) return;
 
     // Simulate page assets loading progress
     const duration = 1200; // 1.2s total loading time
@@ -27,8 +50,11 @@ export function Preloader() {
         if (next >= 100) {
           clearInterval(timer);
           setTimeout(() => {
-            setLoading(false);
-            sessionStorage.setItem("portfolio-loaded", "true");
+            setCompleted(true);
+            try {
+              sessionStorage.setItem("portfolio-loaded", "true");
+              window.dispatchEvent(new CustomEvent("preloader-change"));
+            } catch {}
           }, 200);
           return 100;
         }
@@ -37,11 +63,11 @@ export function Preloader() {
     }, intervalTime);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [active]);
 
   return (
     <AnimatePresence>
-      {loading && (
+      {active && (
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ 
