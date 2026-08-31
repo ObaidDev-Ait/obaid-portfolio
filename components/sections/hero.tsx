@@ -174,6 +174,7 @@ export function Hero() {
                     src="/avatar.jpg"
                     alt="Obaid Ait Mattou"
                     fill
+                    sizes="64px"
                     className="object-cover"
                     priority
                   />
